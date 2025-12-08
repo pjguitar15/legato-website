@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+:root {
+  --app-bg: url("/public/backgrounds/stripes.png");
 }
 
 @theme inline {
