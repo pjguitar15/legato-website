@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 
+// changes
 const logos = [
   { id: 1, name: 'RCF', src: 'sections/about/logos/rcf.png' },
   { id: 2, name: 'QSC', src: 'sections/about/logos/qsc.png' },
