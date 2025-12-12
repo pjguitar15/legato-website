@@ -8,23 +8,15 @@ export const navLinks = [
     path: '/about',
   },
   {
-    name: 'Our Services',
-    path: '/',
+    name: 'Services',
+    path: '/services',
   },
   {
-    name: 'Schedule',
-    path: '/',
+    name: 'Portfolio',
+    path: '/portfolio',
   },
   {
-    name: 'Tools',
-    path: '/',
-  },
-  {
-    name: 'Login',
-    path: '/',
-  },
-  {
-    name: 'Lyrics',
-    path: '/',
+    name: 'Book Us',
+    path: '/book',
   },
 ]
