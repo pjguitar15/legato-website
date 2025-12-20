@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from './components/ui/Navbar'
+import { Geist, Geist_Mono, Inter, Montserrat, Poppins } from 'next/font/google'
+import './globals.css'
+import Navbar from './components/ui/navbar/Navbar'
 import Footer from './components/ui/Footer'
 
 const geistSans = Geist({
@@ -19,19 +19,23 @@ export const metadata: Metadata = {
   description: 'Professional Sounds and Lights Provider',
 }
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
+    <html lang='en' className='scrollbar-zinc-sky-700 scrollbar-zinc-sky-300'>
+      <body className={`${poppins.className} antialiased`}>
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   )
