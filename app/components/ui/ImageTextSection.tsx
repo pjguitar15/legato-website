@@ -1,6 +1,14 @@
-import React from 'react'
-
-const ImageTextSection = ({ reverse }: { reverse?: boolean }) => {
+const ImageTextSection = ({
+  reverse,
+  imgUrl,
+  title,
+  description,
+}: {
+  reverse?: boolean
+  imgUrl: string
+  title: string
+  description: string
+}) => {
   return (
     <div
       className={
@@ -9,25 +17,15 @@ const ImageTextSection = ({ reverse }: { reverse?: boolean }) => {
           : 'flex border border-zinc-700'
       }
     >
-      <div className='flex-1 basis-1/2'>
-        <img
-          className='w-full h-full object-cover'
-          src='/backgrounds/about-bg.png'
-          alt=''
-        />
+      <div className='flex-1 basis-1/2 h-60'>
+        <img className='w-full h-full object-cover' src={imgUrl} alt={title} />
       </div>
       <div className='flex-1 px-10 py-5 flex flex-col items-center justify-center gap-5 bg-zinc-900 basis-1/2'>
         <div className='w-full'>
-          <h6 className='text-start text-lg font-semibold'>
-            Why Legato Sounds and Lights?
-          </h6>
+          <h6 className='text-start text-lg font-semibold'>{title}</h6>
         </div>
-        <p className='text-sm leading-6'>
-          Thanks to its rock-solid reliability, LumenRadio’s CRMX technology for
-          Wireless DMX is the technology of choice for wireless lighting control
-          in the entertainment lighting industry. It outperforms other wireless
-          technologies, particularly in the most challenging conditions, so
-          lighting professionals can rely on it to deliver faultless
+        <p className='text-sm leading-6 text-justify text-zinc-300'>
+          {description}
         </p>
       </div>
     </div>

@@ -2,27 +2,28 @@ import { GrFreebsd, GrGoogleWallet } from "react-icons/gr"
 
 const arr = [
   {
-    title: 'Entertainment Lighting',
+    title: 'Live Sound Systems',
     description:
-      'It all started within the entertainment industry with professional lighting. After we successfully enabled the lighting at Coachella, one of the world’s largest festivals, to be controlled wirelessly without interference, our wireless technology effectively became an industry standard.',
+      'It all started with delivering clear and powerful sound for live performances. From small school programs to full band productions, we built reliable sound systems that ensure vocals, instruments, and every detail are heard with clarity, balance, and impact across any venue.',
     bgColor: 'bg-zinc-900',
     icon: <GrGoogleWallet />,
   },
   {
-    title: 'Building Automation',
+    title: 'Stage Lighting',
     description:
-      'It all started within the entertainment industry with professional lighting. After we successfully enabled the lighting at Coachella, one of the world’s largest festivals, to be controlled wirelessly without interference, our wireless technology effectively became an industry standard.',
+      'Lighting evolved beyond visibility into creating mood and energy on stage. By combining well-balanced front lights, dynamic backlights, and controlled effects, we enhance performances and transform ordinary stages into engaging visual experiences for every audience.',
     bgColor: 'bg-slate-900',
     icon: <GrGoogleWallet />,
   },
   {
     title: 'Today',
     description:
-      'It all started within the entertainment industry with professional lighting. After we successfully enabled the lighting at Coachella, one of the world’s largest festivals, to be controlled wirelessly without interference, our wireless technology effectively became an industry standard.',
+      'Today, we provide complete sounds and lights solutions for events of all sizes. With professional equipment, experienced technicians, and careful planning, we deliver seamless setups that support performers, impress audiences, and elevate every event experience.',
     bgColor: 'bg-dark-900',
     icon: <GrGoogleWallet />,
   },
 ]
+
 
 const InfoPillars = () => {
   return (

@@ -1,61 +1,78 @@
-const arr = [
-  { title: "School Full Band", imgSrc: "/event-types/school-full-band.jpg" },
-  {
-    title: "Church Anniversary",
-    imgSrc: "/event-types/church-anniversary.jpg",
-  },
-  { title: "Corporate", imgSrc: "/event-types/corporate.jpg" },
-  { title: "Cozy Cove Style", imgSrc: "/event-types/cozy-cove.jpg" },
-  { title: "Restobar Band Setup", imgSrc: "/event-types/resto-bar.jpg" },
-  { title: "Gymnasium", imgSrc: "/event-types/gymnasium.jpg" },
-];
+'use client'
+import { useRouter } from 'next/navigation'
 
-const GalleryCards = () => {
+type TileProps = {
+  imgSrc: string
+  title: string
+  shortDesc: string
+  path: string
+}
+
+const GalleryCards = ({ tileItems }: { tileItems: TileProps[] }) => {
+  const router = useRouter()
+
   return (
-    <div
-      className='
-        grid grid-cols-3
-      '
-    >
-      {arr.map((item, i) => (
+    <div className='grid grid-cols-3 gap-4'>
+      {tileItems.map((item, i) => (
         <div
           key={i}
+          onClick={() => router.push(`/sounds-and-lights/${item.path}`)}
           className='
-            overflow-hidden
-            w-full h-75
-            cursor-pointer
-            saturate-60 brightness-90 hover:brightness-100 hover:saturate-150 transition duration-300 relative group
+            relative group cursor-pointer overflow-hidden
+            h-75 w-full
           '
         >
+          {/* image */}
           <img
             src={item.imgSrc}
             alt=''
             className='
-              object-cover
-              w-full h-full
+              h-full w-full object-cover
+              brightness-50 saturate-70
+              transition duration-300
+              group-hover:brightness-100 group-hover:saturate-125
             '
           />
 
-          <h6
-            className='
-              text-start text-lg font-semibold
-              absolute group-hover:bottom-4 inset-x-3 z-10
-            '
-          >
-            {item.title}
-          </h6>
+          {/* gradient overlay */}
           <div
             className='
-              h-50
-              bg-linear-to-t from-black/80 via-black/40 to-transparent
-              opacity-0 transition-opacity
-              absolute inset-x-0 bottom-0 group-hover:opacity-100 duration-300
+              pointer-events-none
+              absolute inset-x-0 bottom-0 h-40
+              bg-linear-to-t from-black/90 via-black/60 to-transparent
+              opacity-70 group-hover:opacity-100
+              transition-opacity duration-300
             '
           />
+
+          {/* text container */}
+          <div
+            className='
+              absolute inset-x-3 bottom-4 z-10
+              transition-all duration-300 ease-out
+            '
+          >
+            {/* title always visible */}
+            <h6 className='text-start text-lg font-semibold text-white'>
+              {item.title}
+            </h6>
+
+            {/* description only on hover */}
+            <p
+              className='
+                mt-1 text-xs text-zinc-300
+                opacity-0 translate-y-2
+                transition-all duration-300 ease-out
+                group-hover:opacity-100 group-hover:translate-y-0
+              '
+            >
+              {item.shortDesc}
+            </p>
+          </div>
         </div>
       ))}
     </div>
   )
-};
+}
 
-export default GalleryCards;
+export default GalleryCards

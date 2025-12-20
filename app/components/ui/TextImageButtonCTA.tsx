@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TextImageButtonCTA = () => {
   return (
     <section className='w-full py-6 bg-linear-to-r from-dark-900 to-zinc-900 border border-zinc-800'>
