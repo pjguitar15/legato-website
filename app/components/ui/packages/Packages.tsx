@@ -34,7 +34,7 @@ const Packages = () => {
             className='border border-zinc-700 bg-zinc-950 flex flex-col'
           >
             <div className='flex flex-col gap-4 text-center bg-linear-to-r from-dark-900 to-zinc-900 border border-zinc-800 py-10'>
-              <div className='flex items-center gap-2 mx-auto'>
+              <div className='flex flex-col items-center mx-auto gap-2'>
                 <FaFire
                   className={
                     pkg.id === 1
