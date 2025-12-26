@@ -36,10 +36,10 @@ export default function RootLayout({
       <body className={`${poppins.className} antialiased`}>
         {/* <Navbar /> */}
         <div className='flex'>
-          <div className='sm:w-1/2 xl:w-2/6'>
+          <div className=''>
             <SidebarNav />
           </div>
-          <div className='sm:w-1/2 xl:w-4/6'>{children}</div>
+          <div className=''>{children}</div>
         </div>
         {/* <Footer /> */}
       </body>

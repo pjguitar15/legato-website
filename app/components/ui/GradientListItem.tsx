@@ -14,27 +14,17 @@ const GradientListItem = ({
 }) => {
   const pathname = usePathname()
   const router = useRouter()
-  const currentPath =
-    pathname.split('/').filter(Boolean)[0] ?? 'sounds-and-lights'
+  const currentPath = pathname.split('/').filter(Boolean)[0] ?? ''
   const isActive = slug === currentPath
   return (
     <li
       onClick={() => router.push(`/${slug}`)}
       className={`
-    text-3xl relative transition-all select-none font-semibold ps-36
+    text-3xl relative transition-all select-none font-semibold
     duration-300 hover:scale-105
     group
   `}
     >
-      {/* arrow never gets clipped/transparent */}
-      <div
-        className={`absolute left-12 top-1/2 -translate-y-1/2 ${
-          isActive ? 'block' : 'hidden'
-        } group-hover:block`}
-      >
-        <TiArrowRight className='text-white' />
-      </div>
-
       {/* gradient applies ONLY to text */}
       <span
         className={`
