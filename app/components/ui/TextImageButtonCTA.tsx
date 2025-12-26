@@ -1,8 +1,8 @@
 const TextImageButtonCTA = () => {
   return (
     <section className='w-full py-6 bg-linear-to-r from-dark-900 to-zinc-900 border border-zinc-800'>
-      <div className='max-w-3/4 mx-auto flex justify-between items-center gap-3 '>
-        <div className='flex items-center'>
+      <div className='max-w-3/4 mx-auto flex flex-col lg:flex-row justify-between items-center gap-3 '>
+        <div className='flex flex-col lg:flex-row items-center'>
           <div className='w-50'>
             <img
               className='w-full h-full'

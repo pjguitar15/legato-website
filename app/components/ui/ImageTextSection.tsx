@@ -13,8 +13,8 @@ const ImageTextSection = ({
     <div
       className={
         reverse
-          ? 'flex flex-row-reverse border border-zinc-700'
-          : 'flex border border-zinc-700'
+          ? 'flex flex-col lg:flex-row-reverse border border-zinc-700'
+          : 'flex flex-col lg:flex-rowborder border-zinc-700'
       }
     >
       <div className='flex-1 basis-1/2 h-60'>

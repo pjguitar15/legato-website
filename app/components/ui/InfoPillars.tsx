@@ -27,20 +27,23 @@ const arr = [
 
 const InfoPillars = () => {
   return (
-    <section className='w-full flex'>
+    <section className='w-full grid grid-cols-1 md:grid-cols-3'>
       {arr.map((item, index) => (
-          <div key={index} className={`flex-1 border p-12 flex flex-col gap-3 ${item.bgColor}`}>
-            <div className='text-4xl text-white'>{item.icon}</div>
-            <h6 className='text-lg font-medium uppercase'>{item.title}</h6>
-            <p className='text-sm leading-7'>
-              It all started within the entertainment industry with professional
-              lighting. After we successfully enabled the lighting at Coachella,
-              one of the world’s largest festivals, to be controlled wirelessly
-              without interference, our wireless technology effectively became
-              an industry standard.
-            </p>
-          </div>
-        ))}
+        <div
+          key={index}
+          className={`border p-12 flex flex-col gap-3 ${item.bgColor}`}
+        >
+          <div className='text-4xl text-white'>{item.icon}</div>
+          <h6 className='text-lg font-medium uppercase'>{item.title}</h6>
+          <p className='text-sm leading-7'>
+            It all started within the entertainment industry with professional
+            lighting. After we successfully enabled the lighting at Coachella,
+            one of the world’s largest festivals, to be controlled wirelessly
+            without interference, our wireless technology effectively became an
+            industry standard.
+          </p>
+        </div>
+      ))}
     </section>
   )
 }

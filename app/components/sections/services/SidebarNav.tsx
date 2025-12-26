@@ -5,6 +5,8 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdClose } from 'react-icons/md'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
+import logo from '@/public/legato-no-icon.png'
 
 const services = [
   { id: 0, name: 'Home', slug: '' },
@@ -37,13 +39,22 @@ const SidebarNav = () => {
       {/* Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className='fixed left-4 top-4 z-40 cursor-pointer text-white rounded-lg p-2 hover:bg-white/10 transition-colors'
+        className='fixed left-0 top-0 z-40 cursor-pointer text-white px-6 py-4 hover:bg-white/10 transition-colors bg-zinc-950 w-full flex justify-between'
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: isOpen ? 0 : 1, x: isOpen ? -20 : 0 }}
         transition={{ duration: 0.2 }}
         disabled={isOpen}
       >
-        <GiHamburgerMenu className='text-2xl' />
+        <div className='w-16'>
+          <Image
+            src={logo}
+            width={50}
+            height={50}
+            className='w-full h-full object-contain'
+            alt='legato sounds and lights'
+          />
+        </div>
+        <GiHamburgerMenu className='text-xl' />
       </motion.button>
 
       {/* Sliding Sidebar */}
@@ -55,7 +66,7 @@ const SidebarNav = () => {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className='fixed left-0 top-0 h-screen w-full md:w-3/4 border-r border-zinc-700 flex flex-col justify-center items-center overflow-hidden z-50'
+            className='fixed left-0 top-0 h-full w-full md:w-3/4 border-r border-zinc-700 flex flex-col justify-center items-center overflow-hidden z-50'
           >
             <AnimatePresence mode='wait'>
               <motion.div

@@ -7,7 +7,7 @@ const ScrollSection = ({ children }: { children: React.ReactNode }) => (
   <div
     className='
       scrollbar-modern
-      px-16 py-12
+      lg:px-16 py-24
       w-full max-h-screen
       overflow-y-auto overflow-x-hidden
     '

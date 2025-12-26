@@ -19,14 +19,14 @@ const HeroWithImage = ({
   ctaAction?: () => void
 }) => {
   return (
-    <section>
+    <section className='overflow-x-hidden'>
       <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center lg:h-[75vh]'>
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className='flex flex-col gap-3 lg:gap-6 px-12 lg:px-24 py-24 lg:py-0'
+          className='flex flex-col gap-3 lg:gap-6 px-7 lg:px-24 py-24 lg:py-0'
         >
           {subtitle && (
             <p className='text-sm uppercase tracking-widest text-emerald-400 font-semibold'>

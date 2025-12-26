@@ -14,9 +14,9 @@ const logos = [
 const MarqueeLogos: React.FC = () => {
 
   return (
-    <>
+    <main className='overflow-x-hidden'>
       <article
-        className={`mx-auto flex max-w-full gap-[var(--gap)] px-4 flex-col`}
+        className={`mx-auto flex max-w-[100vw] gap-[var(--gap)] px-4 flex-col`}
       >
         <div className={`marquee`}>
           <div className='marquee__group'>
@@ -50,7 +50,7 @@ const MarqueeLogos: React.FC = () => {
           </div>
         </div>
       </article>
-    </>
+    </main>
   )
 }
 

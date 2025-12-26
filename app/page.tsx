@@ -88,7 +88,7 @@ const testimonials = [
 export default function Home() {
   return (
     <div className='relative'>
-      <div className='pb-24 flex flex-col'>
+      <div className='flex flex-col'>
         {/* Hero with Image */}
         <HeroWithImage
           subtitle='LEGATO SOUNDS AND LIGHTS'
@@ -99,10 +99,7 @@ export default function Home() {
           ctaText='Learn More'
         />
 
-        <div className='w-full bg-black pb-6 pt-5 flex flex-col gap-2'>
-          {/* <h6 className='mx-auto text-center text-md border-b px-3 py-1'>
-            Brands we use
-          </h6> */}
+        <div className='w-full bg-black pb-6 pt-5'>
           <MarqueeLogos />
         </div>
 
