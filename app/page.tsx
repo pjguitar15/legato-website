@@ -88,7 +88,7 @@ const testimonials = [
 export default function Home() {
   return (
     <div className='relative'>
-      <div className='flex flex-col'>
+      <div className='flex flex-col bg-zinc-950'>
         {/* Hero with Image */}
         <HeroWithImage
           subtitle='LEGATO SOUNDS AND LIGHTS'

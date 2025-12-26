@@ -3,6 +3,8 @@ import SoundsServiceContents from '../components/sections/services/SoundsService
 
 export default function page() {
   return (
-    <main><SoundsServiceContents /></main>
+    <main className='bg-zinc-950 text-white'>
+      <SoundsServiceContents />
+    </main>
   )
 }

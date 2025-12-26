@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='scrollbar-zinc-sky-700 scrollbar-zinc-sky-300'>
-      <body className={`${poppins.className} antialiased relative`}>
+      <body className={`${poppins.className} antialiased relative `}>
         <div className='hidden lg:block sticky top-0 z-50'>
           <Navbar />
         </div>

@@ -19,7 +19,7 @@ const HeroWithImage = ({
   ctaAction?: () => void
 }) => {
   return (
-    <section className='overflow-x-hidden'>
+    <section className='overflow-x-hidden bg-zinc-950'>
       <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center lg:h-[75vh]'>
         <motion.div
           initial={{ opacity: 0, x: -50 }}
