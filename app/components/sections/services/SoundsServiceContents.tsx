@@ -97,7 +97,7 @@ const SoundsServiceContents = () => {
     <ScrollSection>
       <SectionIntro
         title='Sounds and Lights Services for your Event!'
-        description="Click on tiles below to find what you're looking for!"
+        description="We'd live up your events with our top-notch sound and lighting solutions."
       />
       <GalleryCards tileItems={arr} />
       <ImageTextSection

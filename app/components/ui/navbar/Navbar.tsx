@@ -1,10 +1,8 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import MobileMenuButton from './MobileMenuButton'
 import BrandLogo from './BrandLogo'
 import DesktopNavLinks from './DesktopNavLinks'
-import MobileMenuPanel from './MobileMenuPanel'
 
 export type NavItem = {
   label: string
@@ -13,17 +11,17 @@ export type NavItem = {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Services', href: '#', current: true },
-  { label: 'Contact', href: '#' },
-  { label: 'Events', href: '#' },
-  { label: 'About', href: '#' },
+  { label: 'Home', href: '/', current: true },
+  { label: 'Sounds and Lights', href: '/sounds-and-lights' },
+  { label: 'Full Band Rental', href: '/full-band-setup' },
+  { label: 'LED Wall', href: '/led-wall' },
+  { label: 'Stage Setup', href: '/stage-setup' },
+  { label: 'About Legato', href: '/about-legato' },
 ]
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
   const profileRef = useRef<HTMLDivElement | null>(null)
 
-  // Close profile dropdown when clicking outside
   useEffect(() => {
     function onDocMouseDown(e: MouseEvent) {
       if (!profileRef.current) return
@@ -35,31 +33,18 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className='relative bg-zinc-800/30 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10'>
-      <div className='px-2 sm:px-6 lg:px-8'>
-        <div className='relative flex h-16 items-center justify-between'>
-          <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
-            <MobileMenuButton
-              open={mobileOpen}
-              onToggle={() => setMobileOpen((v) => !v)}
-              controlsId='mobile-menu'
-            />
+    <nav className='relative after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10 bg-black'>
+      <div className='sm:px-6 lg:px-8'>
+        <div className='relative flex items-center justify-between'>
+          <div className='flex flex-1 items-center justify-center sm:justify-start'>
+            <BrandLogo />
           </div>
 
-          <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
-            <BrandLogo />
-
+          <div className='hidden sm:flex sm:flex-1 sm:justify-end'>
             <DesktopNavLinks items={NAV_ITEMS} />
           </div>
         </div>
       </div>
-
-      <MobileMenuPanel
-        open={mobileOpen}
-        id='mobile-menu'
-        items={NAV_ITEMS}
-        onNavigate={() => setMobileOpen(false)}
-      />
     </nav>
   )
 }

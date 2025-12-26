@@ -1,14 +1,13 @@
 'use client'
-import Background from './components/ui/Background'
 import SectionIntro from './components/ui/SectionIntro'
 import HeroWithImage from './components/ui/HeroWithImage'
-import StatsSection from './components/ui/StatsSection'
 import ServiceCardGrid from './components/ui/ServiceCardGrid'
 import TestimonialSection from './components/ui/TestimonialSection'
 import PremiumCTASection from './components/ui/PremiumCTASection'
 import { motion } from 'framer-motion'
-import stripes from '@/public/backgrounds/stripes.png'
 import { MdMusicNote, MdLightbulb, MdGraphicEq } from 'react-icons/md'
+import '../app/globals.css'
+import MarqueeLogos from './components/sections/MarqueeLogos'
 
 const stats = [
   {
@@ -38,7 +37,7 @@ const serviceCards = [
     title: 'Sounds & Lights',
     description:
       'Complete audio and lighting solutions for any event size, from intimate gatherings to large-scale productions.',
-    imageSrc: '/event-types/school-full-band.jpg',
+    imageSrc: '/event-types/corporate.jpg',
     icon: <MdMusicNote />,
     features: [
       'Crystal Clear Audio',
@@ -51,15 +50,15 @@ const serviceCards = [
     title: 'Full Band Rental',
     description:
       'Complete backline and equipment rental for live bands. Everything from drums to keyboards and amplifiers.',
-    imageSrc: '/event-types/gymnasium.jpg',
+    imageSrc: '/backgrounds/full-band-background.jpg',
     icon: <MdGraphicEq />,
     features: ['Drum Kits', 'Amplifiers', 'Keyboards', 'Wireless Systems'],
   },
   {
-    title: 'LED & Lighting',
+    title: 'LED Wall',
     description:
       'Stunning visual effects with professional LED walls and dynamic lighting to enhance your event atmosphere.',
-    imageSrc: '/event-types/corporate.jpg',
+    imageSrc: '/backgrounds/led-wall.jpg',
     icon: <MdLightbulb />,
     features: ['LED Walls', 'Moving Lights', 'Stage Wash', 'Effect Lighting'],
   },
@@ -88,83 +87,63 @@ const testimonials = [
 
 export default function Home() {
   return (
-    <div className='relative w-full min-h-screen'>
-      <Background imageUrl={stripes}>
-        <div className='w-full'>
-          <div className='max-w-7xl mx-auto px-6 pt-52 pb-24 flex flex-col gap-24'>
-            {/* Hero Section */}
-            <motion.section
-              className='flex flex-col gap-8 text-center items-center'
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className='text-6xl md:text-7xl font-bold text-white'>
-                Legato Sounds & Lights
-              </h1>
-              <p className='text-xl text-white/80 max-w-3xl'>
-                Professional sounds and lighting for weddings, events, and live
-                bands in Cavite
-              </p>
-              <button className='mt-6 px-8 py-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-black font-bold rounded-lg hover:scale-105 transition-transform'>
-                Get Started
-              </button>
-            </motion.section>
+    <div className='relative'>
+      <div className='pb-24 flex flex-col'>
+        {/* Hero with Image */}
+        <HeroWithImage
+          subtitle='LEGATO SOUNDS AND LIGHTS'
+          title='Professional Sounds and Lights Service'
+          description='Proudly based in Cavite, we specialize in transforming events through exceptional sound and lighting. Our mission is to provide all kinds of events with the professional quality they need to stand out. Our experienced team and premium equipment ensure an unforgettable experience for clients in Cavite and surrounding areas.'
+          imageSrc='/backgrounds/landing-bg.jpg'
+          imageAlt='Professional event setup'
+          ctaText='Learn More'
+        />
 
-            {/* Stats Section */}
-            <StatsSection stats={stats} title='By The Numbers' />
-
-            {/* Hero with Image */}
-            <HeroWithImage
-              subtitle='About Us'
-              title='Your Premier Event Audio & Lighting Partner'
-              description='Founded by Philcob Suzuki, a passionate drummer and events professional, Legato has been delivering exceptional sound and lighting solutions to Cavite for over a decade. We combine cutting-edge technology with expert craftsmanship to make your event unforgettable.'
-              imageSrc='/event-types/resto-bar.jpg'
-              imageAlt='Professional event setup'
-              ctaText='Learn More'
-            />
-
-            {/* Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className='mb-12'
-            >
-              <SectionIntro
-                title='Our Services'
-                description='From intimate gatherings to large-scale events, we provide comprehensive sound and lighting solutions tailored to your needs.'
-              />
-            </motion.div>
-            <ServiceCardGrid cards={serviceCards} />
-
-            {/* Why Choose Us */}
-            <HeroWithImage
-              subtitle='Our Advantage'
-              title='Why Events Trust Legato'
-              description='With professional-grade equipment, experienced technicians, and a dedication to excellence, we ensure your event sounds incredible and looks stunning. Every detail matters, and we handle it all.'
-              imageSrc='/event-types/corporate.jpg'
-              imageAlt='Professional event lighting'
-              ctaText='Book Now'
-            />
-
-            {/* Testimonials */}
-            <TestimonialSection
-              testimonials={testimonials}
-              title='What Our Clients Say'
-            />
-
-            {/* Premium CTA */}
-            <PremiumCTASection
-              headline='Ready to Create Magic?'
-              subheadline='Let Legato bring professional sound and stunning visuals to your next event. Contact us today for a consultation and custom quote.'
-              buttonText='Start Your Event'
-            />
-          </div>
+        <div className='w-full bg-black pb-6 pt-5 flex flex-col gap-2'>
+          {/* <h6 className='mx-auto text-center text-md border-b px-3 py-1'>
+            Brands we use
+          </h6> */}
+          <MarqueeLogos />
         </div>
-      </Background>
+
+        {/* Services */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className='pt-12'
+        >
+          <SectionIntro
+            title='Our Services'
+            description='From intimate gatherings to large-scale events, we provide comprehensive sound and lighting solutions tailored to your needs.'
+          />
+        </motion.div>
+        <ServiceCardGrid cards={serviceCards} />
+
+        {/* Why Choose Us */}
+        <HeroWithImage
+          subtitle='Our Advantage'
+          title='Why Events Trust Legato'
+          description='With professional-grade equipment, experienced technicians, and a dedication to excellence, we ensure your event sounds incredible and looks stunning. Every detail matters, and we handle it all.'
+          imageSrc='/event-types/simple-wedding.jpg'
+          imageAlt='Professional event lighting'
+          ctaText='Book Now'
+        />
+
+        {/* Testimonials */}
+        <TestimonialSection
+          testimonials={testimonials}
+          title='What Our Clients Say'
+        />
+
+        {/* Premium CTA */}
+        <PremiumCTASection
+          headline='Ready to Create Magic?'
+          subheadline='Let Legato bring professional sound and stunning visuals to your next event. Contact us today for a consultation and custom quote.'
+          buttonText='Start Your Event'
+        />
+      </div>
     </div>
   )
 }
-

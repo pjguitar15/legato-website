@@ -60,10 +60,9 @@ const GalleryCards = ({ tileItems }: { tileItems: TileProps[] }) => {
             {/* description only on hover */}
             <p
               className='
-                mt-1 text-xs text-zinc-300
-                opacity-0 translate-y-2
+                mt-1 text-xs text-zinc-300 opacity-60
                 transition-all duration-300 ease-out
-                group-hover:opacity-100 group-hover:translate-y-0
+                group-hover:opacity-100 max-w-[80%]
               '
             >
               {item.shortDesc}

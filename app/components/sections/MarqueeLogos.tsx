@@ -16,7 +16,7 @@ const MarqueeLogos: React.FC = () => {
   return (
     <>
       <article
-        className={`mx-auto flex max-w-full gap-[var(--gap)] px-4 py-10 flex-col`}
+        className={`mx-auto flex max-w-full gap-[var(--gap)] px-4 flex-col`}
       >
         <div className={`marquee`}>
           <div className='marquee__group'>

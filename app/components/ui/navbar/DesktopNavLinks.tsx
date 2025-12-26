@@ -1,26 +1,30 @@
-import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import type { NavItem } from './Navbar'
 
 export default function DesktopNavLinks({ items }: { items: NavItem[] }) {
+  const pathname = usePathname()
+
   return (
     <div className='hidden sm:ml-6 sm:block'>
-      <div className='flex space-x-4'>
+      <div className='flex items-center'>
         {items.map((item) => {
-          const isCurrent = Boolean(item.current)
+          const isActive =
+            pathname === item.href || pathname.startsWith(item.href + '/')
 
           return (
-            <a
+            <Link
               key={item.label}
               href={item.href}
-              aria-current={isCurrent ? 'page' : undefined}
-              className={
-                isCurrent
-                  ? 'rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white'
-                  : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white'
-              }
+              aria-current={isActive ? 'page' : undefined}
+              className={`inline-flex items-center px-6 py-6 text-sm font-medium transition-colors whitespace-nowrap ${
+                isActive
+                  ? 'text-white bg-zinc-900'
+                  : 'text-gray-300 hover:text-white hover:bg-white/5'
+              }`}
             >
               {item.label}
-            </a>
+            </Link>
           )
         })}
       </div>

@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Montserrat, Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/ui/navbar/Navbar'
 import Footer from './components/ui/Footer'
 import SidebarNav from './components/sections/services/SidebarNav'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
   title: 'Legato Sounds and Lights',
@@ -33,15 +23,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='scrollbar-zinc-sky-700 scrollbar-zinc-sky-300'>
-      <body className={`${poppins.className} antialiased`}>
-        {/* <Navbar /> */}
+      <body className={`${poppins.className} antialiased relative`}>
+        <div className='hidden lg:block sticky top-0 z-50'>
+          <Navbar />
+        </div>
         <div className='flex'>
-          <div className=''>
+          <div className='lg:hidden'>
             <SidebarNav />
           </div>
-          <div className=''>{children}</div>
+          <div>{children}</div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

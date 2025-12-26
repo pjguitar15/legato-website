@@ -55,7 +55,7 @@ const SidebarNav = () => {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className='fixed left-0 top-0 h-screen w-1/4 border-r border-zinc-700 flex flex-col justify-center items-center overflow-hidden z-50'
+            className='fixed left-0 top-0 h-screen w-full md:w-3/4 border-r border-zinc-700 flex flex-col justify-center items-center overflow-hidden z-50'
           >
             <AnimatePresence mode='wait'>
               <motion.div

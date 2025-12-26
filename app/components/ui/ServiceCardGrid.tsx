@@ -14,7 +14,7 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
   return (
     <motion.div
       whileHover={{ y: -8 }}
-      className='group overflow-hidden bg-white/5 border border-white/10 hover:border-emerald-400/50 transition-all duration-300'
+      className='group overflow-hidden bg-white/5 border border-white/10 hover:border-emerald-400/50 transition-all duration-300 cursor-pointer'
     >
       {/* Image */}
       <div className='relative h-64 overflow-hidden'>
@@ -26,11 +26,6 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
           className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
         />
         <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
-        {card.icon && (
-          <div className='absolute top-6 right-6 text-3xl text-emerald-400'>
-            {card.icon}
-          </div>
-        )}
       </div>
 
       {/* Content */}
@@ -43,7 +38,10 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
         {card.features && (
           <ul className='space-y-2 mb-6'>
             {card.features.map((feature, idx) => (
-              <li key={idx} className='flex items-center gap-2 text-sm text-white/60'>
+              <li
+                key={idx}
+                className='flex items-center gap-2 text-sm text-white/60'
+              >
                 <span className='w-1.5 h-1.5 bg-emerald-400 rounded-full' />
                 {feature}
               </li>
@@ -51,9 +49,9 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
           </ul>
         )}
 
-        <button className='w-full py-2 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 text-emerald-400 font-semibold hover:from-emerald-400/40 hover:to-cyan-400/40 transition-all duration-300'>
+        {/* <button className='w-full py-2 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 text-emerald-400 font-semibold hover:from-emerald-400/40 hover:to-cyan-400/40 transition-all duration-300'>
           Learn More
-        </button>
+        </button> */}
       </div>
     </motion.div>
   )
@@ -61,7 +59,7 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
 
 const ServiceCardGrid = ({ cards }: { cards: ServiceCard[] }) => {
   return (
-    <section className='w-full py-20'>
+    <section className='max-w-7xl mx-auto py-20'>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {cards.map((card, index) => (
           <motion.div

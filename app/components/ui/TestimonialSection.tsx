@@ -50,9 +50,9 @@ const TestimonialSection = ({
   title?: string
 }) => {
   return (
-    <section className='w-full py-20'>
+    <section className='w-full py-32'>
       {title && (
-        <h2 className='text-3xl font-bold text-white text-center mb-16'>
+        <h2 className='text-2xl font-bold text-white text-center mb-16'>
           {title}
         </h2>
       )}
