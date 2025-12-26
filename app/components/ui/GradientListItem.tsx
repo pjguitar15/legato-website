@@ -20,7 +20,7 @@ const GradientListItem = ({
     <li
       onClick={() => router.push(`/${slug}`)}
       className={`
-    text-3xl relative transition-all select-none font-semibold
+    text-xl relative transition-all select-none font-semibold
     duration-300 hover:scale-105
     group
   `}
