@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -15,7 +17,7 @@ const HeroWithImage = ({
   description: string
   imageSrc: string
   imageAlt: string
-  ctaText: string
+  ctaText?: string
   ctaAction?: () => void
 }) => {
   return (
@@ -39,14 +41,16 @@ const HeroWithImage = ({
           <p className='text-sm lg:text-base text-white/70 leading-relaxed'>
             {description}
           </p>
-          <div className='pt-4'>
-            <button
-              onClick={ctaAction}
-              className='px-4 py-3 lg:px-8 lg:py-4 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm lg:text-base'
-            >
-              {ctaText}
-            </button>
-          </div>
+          {ctaText && (
+            <div className='pt-4'>
+              <button
+                onClick={ctaAction}
+                className='px-4 py-3 lg:px-8 lg:py-4 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm lg:text-base'
+              >
+                {ctaText}
+              </button>
+            </div>
+          )}
         </motion.div>
 
         <motion.div

@@ -6,10 +6,9 @@ import { motion } from 'framer-motion'
 const ScrollSection = ({ children }: { children: React.ReactNode }) => (
   <div
     className='
-      scrollbar-modern
-      lg:px-16 py-24
-      w-full max-h-screen
-      overflow-y-auto overflow-x-hidden
+      lg:px-16 py-18
+      w-full
+      overflow-y-auto overflow-x-hidden bg-zinc-950 text-white
     '
   >
     <motion.div

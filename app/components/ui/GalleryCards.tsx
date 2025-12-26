@@ -1,5 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation'
+import { IoMdEye } from 'react-icons/io'
 
 type TileProps = {
   imgSrc: string
@@ -12,7 +13,7 @@ const GalleryCards = ({ tileItems }: { tileItems: TileProps[] }) => {
   const router = useRouter()
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full'>
       {tileItems.map((item, i) => (
         <div
           key={i}
@@ -28,9 +29,8 @@ const GalleryCards = ({ tileItems }: { tileItems: TileProps[] }) => {
             alt=''
             className='
               h-full w-full object-cover
-              brightness-50 saturate-70
               transition duration-300
-              group-hover:brightness-100 group-hover:saturate-125
+              group-hover:brightness-30 group-hover:saturate-125
             '
           />
 
@@ -44,6 +44,11 @@ const GalleryCards = ({ tileItems }: { tileItems: TileProps[] }) => {
               transition-opacity duration-300
             '
           />
+
+          <div className='absolute hidden inset-0 group-hover:flex items-center justify-center flex-col gap-1'>
+            <IoMdEye className='text-2xl' />
+            <p className='text-white text-sm'>Click to view</p>
+          </div>
 
           {/* text container */}
           <div
@@ -60,7 +65,7 @@ const GalleryCards = ({ tileItems }: { tileItems: TileProps[] }) => {
             {/* description only on hover */}
             <p
               className='
-                mt-1 text-xs text-zinc-300 opacity-60
+                mt-1 text-xs text-white opacity-80
                 transition-all duration-300 ease-out
                 group-hover:opacity-100 max-w-[80%]
               '

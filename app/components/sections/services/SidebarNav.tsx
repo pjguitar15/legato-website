@@ -38,8 +38,7 @@ const SidebarNav = () => {
     <div className='flex relative'>
       {/* Toggle Button */}
       <motion.button
-        onClick={() => setIsOpen(true)}
-        className='fixed left-0 top-0 z-40 cursor-pointer text-white px-6 py-4 hover:bg-white/10 transition-colors bg-zinc-950 w-full flex justify-between'
+        className='fixed left-0 top-0 z-40 cursor-pointer text-white px-6 py-4  transition-colors bg-zinc-950 w-full flex justify-between'
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: isOpen ? 0 : 1, x: isOpen ? -20 : 0 }}
         transition={{ duration: 0.2 }}
@@ -54,7 +53,8 @@ const SidebarNav = () => {
             alt='legato sounds and lights'
           />
         </div>
-        <GiHamburgerMenu className='text-xl' />
+
+        <GiHamburgerMenu onClick={() => setIsOpen(true)} className='text-xl' />
       </motion.button>
 
       {/* Sliding Sidebar */}
@@ -62,11 +62,11 @@ const SidebarNav = () => {
         {isOpen && (
           <motion.div
             key='sidebar'
-            initial={{ x: '-100%' }}
+            initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
+            exit={{ x: '100%' }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className='fixed left-0 top-0 h-full w-full md:w-3/4 border-r border-zinc-700 flex flex-col justify-center items-center overflow-hidden z-50'
+            className='fixed right-0 top-0 h-full w-full md:w-3/4 border-r border-zinc-700 flex flex-col justify-center items-center overflow-hidden z-50'
           >
             <AnimatePresence mode='wait'>
               <motion.div

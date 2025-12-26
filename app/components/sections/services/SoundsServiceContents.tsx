@@ -1,4 +1,3 @@
-import React from 'react'
 import SectionIntro from '../../ui/SectionIntro'
 import ImageTextSection from '../../ui/ImageTextSection'
 import InfoPillars from '../../ui/InfoPillars'
@@ -8,59 +7,11 @@ import ScrollSection from '../../layout/ScrollSection'
 
 const arr = [
   {
-    title: 'School Full Band',
-    shortDesc:
-      'Complete live band sound and lighting setup for school events and programs.',
-    imgSrc: '/event-types/school-full-band.jpg',
-    path: 'school-full-band',
-  },
-  {
-    title: 'Church Anniversary',
-    shortDesc:
-      'Clear, balanced audio and stage lighting for worship and anniversary celebrations.',
-    imgSrc: '/event-types/church-anniversary.jpg',
-    path: 'church-anniversary',
-  },
-  {
     title: 'Corporate',
     shortDesc:
       'Professional sound and visual setup for meetings, launches, and formal events.',
     imgSrc: '/event-types/corporate.jpg',
     path: 'corporate-events',
-  },
-  {
-    title: 'Cozy Cove Style',
-    shortDesc:
-      'Warm, intimate sound and lighting perfect for small venues and chill performances.',
-    imgSrc: '/event-types/cozy-cove.jpg',
-    path: 'cozy-cove-style',
-  },
-  {
-    title: 'Restobar Band Setup',
-    shortDesc:
-      'Punchy live band audio tailored for restobars and night performances.',
-    imgSrc: '/event-types/resto-bar.jpg',
-    path: 'restobar-band-setup',
-  },
-  {
-    title: 'Gymnasium',
-    shortDesc:
-      'Powerful sound coverage designed for large indoor spaces and school gyms.',
-    imgSrc: '/event-types/gymnasium.jpg',
-    path: 'gymnasium-events',
-  },
-  {
-    title: 'Multi-track Studio Recording',
-    shortDesc:
-      'High-quality multi-track recording setup for live sessions and studio work.',
-    imgSrc: '/event-types/multi-track-studio.jpg',
-    path: 'multi-track-studio-recording',
-  },
-  {
-    title: 'Backline Rental',
-    shortDesc: 'Reliable backline equipment rental for bands and performers.',
-    imgSrc: '/event-types/backline-rental.jpg',
-    path: 'backline-rental',
   },
   {
     title: 'Simple Wedding',
@@ -77,12 +28,60 @@ const arr = [
     path: 'simple-corporate-setup',
   },
   {
-    title: 'Food Park Setup',
+    title: 'Indoor Band Setup',
     shortDesc:
-      'Vibrant sound and lighting for food park events and outdoor gatherings.',
-    imgSrc: '/event-types/food-park.jpg',
-    path: 'food-park-setup',
+      'Punchy live band audio tailored for restobars and night performances.',
+    imgSrc: '/event-types/resto-bar.jpg',
+    path: 'restobar-band-setup',
   },
+  {
+    title: 'Outdoor Band Setup',
+    shortDesc:
+      'Complete live band sound and lighting setup for school events and programs.',
+    imgSrc: '/event-types/school-full-band.jpg',
+    path: 'school-full-band',
+  },
+  {
+    title: 'Church Anniversary',
+    shortDesc:
+      'Clear, balanced audio and stage lighting for worship and anniversary celebrations.',
+    imgSrc: '/event-types/church-anniversary.jpg',
+    path: 'church-anniversary',
+  },
+  {
+    title: 'Cozy Cove Style',
+    shortDesc:
+      'We can recommend good venues for you! Warm, intimate sound and lighting perfect band performances.',
+    imgSrc: '/event-types/cozy-cove.jpg',
+    path: 'cozy-cove-style',
+  },
+  {
+    title: 'Large Gymnasium',
+    shortDesc:
+      'Powerful sound coverage designed for large indoor spaces and school gyms.',
+    imgSrc: '/event-types/gymnasium.jpg',
+    path: 'gymnasium-events',
+  },
+  // {
+  //   title: 'Multi-track Studio Recording',
+  //   shortDesc:
+  //     'High-quality multi-track recording setup for live sessions and studio work.',
+  //   imgSrc: '/event-types/multi-track-studio.jpg',
+  //   path: 'multi-track-studio-recording',
+  // },
+  // {
+  //   title: 'Backline Rental',
+  //   shortDesc: 'Reliable backline equipment rental for bands and performers.',
+  //   imgSrc: '/event-types/backline-rental.jpg',
+  //   path: 'backline-rental',
+  // },
+  // {
+  //   title: 'Food Park Setup',
+  //   shortDesc:
+  //     'Vibrant sound and lighting for food park events and outdoor gatherings.',
+  //   imgSrc: '/event-types/food-park.jpg',
+  //   path: 'food-park-setup',
+  // },
   {
     title: 'Barangay Gymnasium Events',
     shortDesc:
@@ -95,10 +94,19 @@ const arr = [
 const SoundsServiceContents = () => {
   return (
     <ScrollSection>
-      <SectionIntro
-        title='Sounds and Lights Services for your Event!'
-        description="We'd live up your events with our top-notch sound and lighting solutions."
-      />
+      <div className='flex justify-between items-center w-full'>
+        <div className='flex flex-col gap-3'>
+          <h6 className='text-lg lg:text-3xl font-semibold text-white'>
+            Types of Packages that suits your Events
+          </h6>
+          <p className='text-xs lg:text-sm leading-6 text-zinc-400 max-w-140'>
+            Here are some of the most common types of events we cater to:
+          </p>
+        </div>
+        <button className='px-4 py-3 lg:px-8 lg:py-4 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm lg:text-base'>
+          Go straight to packages
+        </button>
+      </div>
       <GalleryCards tileItems={arr} />
       <ImageTextSection
         imgUrl='/backgrounds/about-bg.png'

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from 'next/font/google'
+import { Oswald, Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/ui/navbar/Navbar'
 import Footer from './components/ui/Footer'
@@ -16,6 +16,13 @@ const poppins = Poppins({
   display: 'swap',
 })
 
+export const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-oswald',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,11 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className='scrollbar-zinc-sky-700 scrollbar-zinc-sky-300'>
-      <body className={`${poppins.className} antialiased relative `}>
+      <body
+        className={`${poppins.className} ${oswald.variable} antialiased relative scrollbar-modern`}
+      >
         <div className='hidden lg:block sticky top-0 z-50'>
           <Navbar />
         </div>
-        <div className='flex'>
+        <div>
           <div className='lg:hidden'>
             <SidebarNav />
           </div>
