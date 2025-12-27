@@ -1,4 +1,3 @@
-import SectionIntro from '../../ui/SectionIntro'
 import ImageTextSection from '../../ui/ImageTextSection'
 import InfoPillars from '../../ui/InfoPillars'
 import TextImageButtonCTA from '../../ui/TextImageButtonCTA'
@@ -63,26 +62,6 @@ const arr = [
     imgSrc: '/event-types/gymnasium.jpg',
     path: 'gymnasium-events',
   },
-  // {
-  //   title: 'Multi-track Studio Recording',
-  //   shortDesc:
-  //     'High-quality multi-track recording setup for live sessions and studio work.',
-  //   imgSrc: '/event-types/multi-track-studio.jpg',
-  //   path: 'multi-track-studio-recording',
-  // },
-  // {
-  //   title: 'Backline Rental',
-  //   shortDesc: 'Reliable backline equipment rental for bands and performers.',
-  //   imgSrc: '/event-types/backline-rental.jpg',
-  //   path: 'backline-rental',
-  // },
-  // {
-  //   title: 'Food Park Setup',
-  //   shortDesc:
-  //     'Vibrant sound and lighting for food park events and outdoor gatherings.',
-  //   imgSrc: '/event-types/food-park.jpg',
-  //   path: 'food-park-setup',
-  // },
   {
     title: 'Barangay Gymnasium Events',
     shortDesc:
@@ -95,30 +74,34 @@ const arr = [
 const SoundsServiceContents = () => {
   return (
     <ScrollSection>
-      <div className='flex justify-between items-center w-full'>
+      <div className='w-full flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between'>
         <div className='flex flex-col gap-3'>
-          <h6 className='text-lg lg:text-3xl font-semibold text-white'>
+          <h6 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-white leading-tight'>
             Types of Packages that suits your Events
           </h6>
-          <p className='text-xs lg:text-sm leading-6 text-zinc-400 max-w-140'>
+          <p className='text-sm sm:text-base lg:text-sm leading-6 text-zinc-400 max-w-xl lg:max-w-140'>
             Here are some of the most common types of events we cater to:
           </p>
         </div>
+
         <Link
           href='/sounds-and-lights/packages'
-          className='px-4 py-3 lg:px-8 lg:py-4 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm lg:text-base'
+          className='w-full lg:w-auto text-center px-4 py-3 sm:px-6 sm:py-4 lg:px-8 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm sm:text-base'
         >
           Go straight to packages
         </Link>
       </div>
+
       <GalleryCards tileItems={arr} />
+
       <ImageTextSection
         imgUrl='/backgrounds/about-bg.png'
         title='Why Legato Sounds and Lights'
         description={`Reliable sound and lighting solutions for live bands, churches, corporate events, and community gatherings. We focus on clear audio, clean setups, and smooth event flow so every performance is heard properly and every moment feels right.`}
       />
+
       <InfoPillars />
-      <TextImageButtonCTA />
+      
     </ScrollSection>
   )
 }

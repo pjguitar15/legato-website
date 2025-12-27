@@ -1,4 +1,7 @@
+'use client'
+
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 const PremiumCTASection = ({
   headline,
@@ -11,26 +14,31 @@ const PremiumCTASection = ({
   buttonText: string
   buttonAction?: () => void
 }) => {
+  const router = useRouter()
+
   return (
-    <section className='w-full py-12'>
+    <section className='w-full'>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className='relative overflow-hidden bg-linear-to-r from-zinc-700/20 via-teal-600/20 to-zinc-700/20 border-y border-emerald-400/30 p-16 text-center'
+        className='overflow-hidden bg-linear-to-r from-zinc-700/20 via-teal-600/20 to-zinc-700/20 border-y border-zinc-900/30 p-16 text-center relative'
       >
-        {/* Animated background elements */}
-        <div className='absolute top-0 right-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl z-0' />
-        <div className='absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl z-0' />
-
+        <div className='absolute inset-0'>
+          <img
+            className='w-full h-full object-cover object-center brightness-12'
+            src='/backgrounds/cta-bg.jpg'
+            alt=''
+          />
+        </div>
         <div className='relative z-10'>
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className='text-xl lg:text-3xl font-bold text-white mb-6 leading-tight'
+            className='text-xl lg:text-4xl font-bold text-yellow-500 mb-6 leading-tight uppercase'
           >
             {headline}
           </motion.h2>
@@ -52,8 +60,10 @@ const PremiumCTASection = ({
             transition={{ duration: 0.5, delay: 0.3 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={buttonAction}
-            className='px-9 lg:px-12 py-3 lg:py-4 bg-linear-to-r from-emerald-400 to-cyan-400 text-black font-bold text-sm lg:text-md hover:shadow-2xl hover:shadow-emerald-400/50 transition-all duration-300'
+            onClick={() => {
+              router.push('/contact')
+            }}
+            className='px-9 lg:px-12 py-3 lg:py-4 bg-linear-to-r from-emerald-400 to-cyan-400 text-black font-bold text-sm lg:text-md hover:shadow-2xl hover:shadow-emerald-400/50 transition-all duration-300 cursor-pointer'
           >
             {buttonText}
           </motion.button>

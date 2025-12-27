@@ -6,7 +6,6 @@ import SectionIntro from '../ui/SectionIntro'
 import ServiceCardGrid from '../ui/ServiceCardGrid'
 import { MdGraphicEq, MdLightbulb, MdMusicNote } from 'react-icons/md'
 import TestimonialSection from '../ui/TestimonialSection'
-import PremiumCTASection from '../ui/PremiumCTASection'
 import { useRouter } from 'next/navigation'
 import CompaniesThatBooked from '../sections/CompaniesThatBooked'
 
@@ -112,21 +111,12 @@ const LandingPage = () => {
         imageSrc='/event-types/simple-wedding.jpg'
         imageAlt='Professional event lighting'
         ctaText='Book Now'
+        ctaAction={bookNowAction}
       />
-
       <CompaniesThatBooked />
-
-      {/* Testimonials */}
       <TestimonialSection
         testimonials={testimonials}
         title='What Our Clients Say'
-      />
-
-      {/* Premium CTA */}
-      <PremiumCTASection
-        headline='Ready to Create Magic?'
-        subheadline='Let Legato bring professional sound and stunning visuals to your next event. Contact us today for a consultation and custom quote.'
-        buttonText='Start Your Event'
       />
     </div>
   )

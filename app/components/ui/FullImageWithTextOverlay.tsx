@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const FullImageWithTextOverlay = () => {
   return (
-    <div className='relative h-[90vh] w-full overflow-hidden'>
+    <div className='relative w-full overflow-hidden h-[70vh] sm:h-[80vh] lg:h-[90vh]'>
       {/* Background image (slow premium zoom) */}
       <motion.img
         src='/led-wall/led-wall.jpg'
@@ -23,32 +23,34 @@ const FullImageWithTextOverlay = () => {
         transition={{ duration: 0.9, ease: 'easeOut' }}
       />
 
-      {/* Subtle vignette for extra "premium" depth */}
+      {/* Subtle vignette */}
       <motion.div
         className='absolute inset-0 h-full'
         style={{
           background:
-            'radial-gradient(80% 60% at 70% 80%, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.75) 100%)',
+            'radial-gradient(80% 60% at 70% 80%, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.78) 100%)',
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.0, delay: 0.1, ease: 'easeOut' }}
       />
 
-      {/* Text block (stagger + slide up + slight blur) */}
+      {/* Text block (responsive positioning) */}
       <motion.div
-        className='absolute bottom-10 right-10 text-right'
+        className='absolute
+          left-5 right-5 bottom-6 text-left
+          sm:left-auto sm:right-8 sm:bottom-10 sm:text-right
+          lg:right-10'
         initial='hidden'
         animate='show'
         variants={{
           hidden: {},
-          show: {
-            transition: { staggerChildren: 0.08, delayChildren: 0.25 },
-          },
+          show: { transition: { staggerChildren: 0.08, delayChildren: 0.25 } },
         }}
       >
         <motion.h1
-          className='font-oswald text-5xl md:text-6xl lg:text-9xl text-white tracking-wide leading-tight'
+          className='font-oswald text-white tracking-wide leading-tight uppercase
+            text-4xl sm:text-6xl md:text-7xl lg:text-9xl'
           variants={{
             hidden: { y: 28, opacity: 0, filter: 'blur(8px)' },
             show: {
@@ -63,7 +65,8 @@ const FullImageWithTextOverlay = () => {
         </motion.h1>
 
         <motion.p
-          className='font-oswald text-lg md:text-3xl text-zinc-300 tracking-widest mt-2 uppercase'
+          className='font-oswald text-zinc-300 tracking-[0.2em] mt-2 uppercase
+            text-xs sm:text-base md:text-xl lg:text-3xl'
           variants={{
             hidden: { y: 18, opacity: 0, filter: 'blur(6px)' },
             show: {
@@ -77,9 +80,10 @@ const FullImageWithTextOverlay = () => {
           Big visuals. Bigger impact.
         </motion.p>
 
-        {/* Tiny accent line */}
+        {/* Accent line */}
         <motion.div
-          className='ml-auto mt-5 h-0.5 w-24 bg-white/70'
+          className='mt-4 h-0.5 w-16 bg-white/70
+            sm:ml-auto sm:w-24'
           variants={{
             hidden: { scaleX: 0, opacity: 0, transformOrigin: '100% 50%' },
             show: {

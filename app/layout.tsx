@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from './components/ui/navbar/Navbar'
 import Footer from './components/ui/Footer'
 import SidebarNav from './components/sections/services/SidebarNav'
+import PremiumCTASection from './components/ui/PremiumCTASection'
 
 export const metadata: Metadata = {
   title: 'Legato Sounds and Lights',
@@ -42,6 +43,12 @@ export default function RootLayout({
           </div>
           <div>{children}</div>
         </div>
+
+        <PremiumCTASection
+          headline='Ready to Book Now?'
+          subheadline='Let Legato bring professional sound and stunning visuals to your next event. Contact us today for a consultation and custom quote.'
+          buttonText='Book Your Event'
+        />
         <Footer />
       </body>
     </html>

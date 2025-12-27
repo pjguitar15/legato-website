@@ -15,8 +15,9 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Sounds and Lights', href: '/sounds-and-lights' },
   { label: 'Full Band Rental', href: '/full-band-setup' },
   { label: 'LED Wall', href: '/led-wall' },
-  { label: 'Stage Setup', href: '/stage-setup' },
+  // { label: 'Stage Setup', href: '/stage-setup' },
   { label: 'About Legato', href: '/about-legato' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Navbar() {

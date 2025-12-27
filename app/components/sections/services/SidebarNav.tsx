@@ -13,8 +13,9 @@ const services = [
   { id: 1, name: 'Sounds and Lights', slug: 'sounds-and-lights' },
   { id: 2, name: 'Full Band Rental', slug: 'full-band-setup' },
   { id: 3, name: 'LED Wall', slug: 'led-wall' },
-  { id: 4, name: 'Stage Setup', slug: 'stage-setup' },
+  // { id: 4, name: 'Stage Setup', slug: 'stage-setup' },
   { id: 5, name: 'About Legato', slug: 'about-legato' },
+  { id: 6, name: 'Contact', slug: 'contact' },
 ]
 
 const backgroundMap: Record<string, string> = {
@@ -23,8 +24,9 @@ const backgroundMap: Record<string, string> = {
   'full-band-setup': '/backgrounds/full-band-background.jpg',
   'event-lighting': '/backgrounds/service-lighting-bg.jpg',
   'led-wall': '/backgrounds/led-wall.jpg',
-  'stage-setup': '/backgrounds/stage.webp',
-  'about-legato': '/backgrounds/about-bg.jpg',
+  // 'stage-setup': '/backgrounds/stage.webp',
+  'about-legato': '/backgrounds/service-list-bg.jpg',
+  contact: '/backgrounds/service-list-bg.jpg',
 }
 
 const SidebarNav = () => {

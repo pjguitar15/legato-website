@@ -9,7 +9,7 @@ interface Testimonial {
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <motion.div className='bg-linear-to-br from-emerald-400/10 to-cyan-400/10 border border-white/10 p-8 backdrop-blur-sm'>
+    <motion.div className='bg-linear-to-br from-emerald-400/10 to-cyan-400/10 border border-white/10 p-8 backdrop-blur-sm h-full'>
       {/* Stars */}
       <div className='flex gap-1 mb-4'>
         {[...Array(5)].map((_, i) => (
@@ -20,7 +20,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
       </div>
 
       {/* Quote */}
-      <p className='text-white/80 lg:text-lg leading-relaxed mb-6 italic'>
+      <p className='text-white/80 lg:text-md leading-relaxed mb-6 italic'>
         "{testimonial.message}"
       </p>
 
@@ -34,8 +34,8 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           </div>
         )}
         <div>
-          <h4 className='font-bold text-white'>{testimonial.name}</h4>
-          <p className='text-xs lg:text-sm text-white/60'>{testimonial.role}</p>
+          <h4 className='font-semibold text-white'>{testimonial.name}</h4>
+          <p className='text-xs text-white/60'>{testimonial.role}</p>
         </div>
       </div>
     </motion.div>
@@ -78,6 +78,7 @@ const TestimonialSection = ({
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
+            className='self-stretch h-full'
           >
             <TestimonialCard testimonial={testimonial} />
           </motion.div>

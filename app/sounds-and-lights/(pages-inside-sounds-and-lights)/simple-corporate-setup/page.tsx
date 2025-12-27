@@ -1,4 +1,3 @@
-import ScrollSection from '@/app/components/layout/ScrollSection'
 import ImageTextSection from '@/app/components/ui/ImageTextSection'
 import Packages from '@/app/components/ui/packages/Packages'
 import TextImageButtonCTA from '@/app/components/ui/TextImageButtonCTA'
