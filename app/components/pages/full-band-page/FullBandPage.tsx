@@ -4,7 +4,10 @@ import Header from './Header'
 const FullBandPage = () => {
   return (
     <div className='w-full'>
-      <Header />
+      <Header
+        title='WE CARE ABOUT SOUND OF PERFORMERS'
+        bgType='full-band-setup'
+      />
       <HeroWithImage
         subtitle='WHY BOOK OUR FULL BAND'
         title='Quality Equipments'

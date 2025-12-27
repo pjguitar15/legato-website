@@ -2,8 +2,8 @@
 
 import { IoMdClose } from 'react-icons/io'
 import ScrollSection from '../../layout/ScrollSection'
-import { IoArrowBack } from 'react-icons/io5'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 
 const PackageModal = ({
   selectedPackage,
@@ -17,41 +17,57 @@ const PackageModal = ({
   const selectedPackageData = packages?.find(
     (pkg: any) => pkg.id === selectedPackage,
   )
-  const equipments = selectedPackageData?.equipment
+
+  const equipments = selectedPackageData?.equipment ?? []
   const sampleImages = selectedPackageData?.sampleImages ?? []
 
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedPackage(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleEsc)
+    return () => window.removeEventListener('keydown', handleEsc)
+  }, [setSelectedPackage])
+
   return (
-    <AnimatePresence>
+    /* Backdrop */
+    <motion.div
+      className='fixed inset-0 z-50 bg-black/60 overflow-y-scroll scrollbar-modern'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setSelectedPackage(null)}
+    >
+      {/* Modal panel */}
       <motion.div
-        initial={{ x: '100%', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: '100%', opacity: 0 }}
-        transition={{
-          type: 'spring',
-          stiffness: 260,
-          damping: 28,
-        }}
-        className='fixed inset-y-0 right-0 w-4/6 h-full bg-black z-50'
+        initial={{ x: '100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '100%' }}
+        transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+        className='absolute right-0 inset-y-0 w-4/6 h-full bg-zinc-900'
+        onClick={(e) => e.stopPropagation()} // 👈 IMPORTANT
       >
         <ScrollSection>
           <div className='w-full'>
             <button
-              className='flex items-center gap-2 text-xs text-zinc-400 hover:text-white transition cursor-pointer'
+              className='flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition cursor-pointer'
               onClick={() => setSelectedPackage(null)}
             >
               <IoMdClose />
               Close
             </button>
           </div>
+
           <div className='w-full mx-auto bg-zinc-950 border border-zinc-800 p-6 flex flex-col gap-6'>
-            {/* Header */}
             <div className='flex items-center justify-between'>
               <span className='text-xs uppercase tracking-wide text-zinc-500'>
                 Quotation Details
               </span>
             </div>
 
-            {/* Title */}
             <div className='border-b border-zinc-800 pb-4'>
               <h3 className='text-lg font-semibold text-white'>
                 Equipment & Inclusions
@@ -61,7 +77,6 @@ const PackageModal = ({
               </p>
             </div>
 
-            {/* Equipment List */}
             <ul className='grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm'>
               {equipments.map((equipment: string, index: number) => (
                 <li
@@ -74,7 +89,6 @@ const PackageModal = ({
               ))}
             </ul>
 
-            {/* Footer note */}
             <div className='border-t border-zinc-800 pt-4 text-xs text-zinc-500'>
               <p>
                 *Equipment quantity and configuration may vary depending on
@@ -85,7 +99,6 @@ const PackageModal = ({
 
           {sampleImages.length > 0 && (
             <div className='w-full mt-10'>
-              {/* Section header */}
               <div className='mb-4'>
                 <h4 className='text-sm font-semibold text-white'>
                   Sample Setup Photos
@@ -95,8 +108,7 @@ const PackageModal = ({
                 </p>
               </div>
 
-              {/* Image grid */}
-              <div className='grid grid-cols-2 md:grid-cols-2 gap-4'>
+              <div className='grid grid-cols-2 gap-4'>
                 {sampleImages.map((src: string, index: number) => (
                   <div
                     key={index}
@@ -114,7 +126,7 @@ const PackageModal = ({
           )}
         </ScrollSection>
       </motion.div>
-    </AnimatePresence>
+    </motion.div>
   )
 }
 

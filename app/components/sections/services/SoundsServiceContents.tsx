@@ -4,6 +4,7 @@ import InfoPillars from '../../ui/InfoPillars'
 import TextImageButtonCTA from '../../ui/TextImageButtonCTA'
 import GalleryCards from '../../ui/GalleryCards'
 import ScrollSection from '../../layout/ScrollSection'
+import Link from 'next/link'
 
 const arr = [
   {
@@ -103,9 +104,12 @@ const SoundsServiceContents = () => {
             Here are some of the most common types of events we cater to:
           </p>
         </div>
-        <button className='px-4 py-3 lg:px-8 lg:py-4 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm lg:text-base'>
+        <Link
+          href='/sounds-and-lights/packages'
+          className='px-4 py-3 lg:px-8 lg:py-4 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-bold hover:scale-105 transition-transform duration-300 cursor-pointer text-sm lg:text-base'
+        >
           Go straight to packages
-        </button>
+        </Link>
       </div>
       <GalleryCards tileItems={arr} />
       <ImageTextSection

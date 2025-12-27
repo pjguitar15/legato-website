@@ -3,8 +3,19 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { IoArrowBackOutline } from 'react-icons/io5'
+import { coverImages, EventTypes } from '@/constants/eventTypes'
 
-const Header = ({ hideButtons }: { hideButtons?: boolean }) => {
+const Header = ({
+  hideButtons,
+  title,
+  bgType,
+}: {
+  hideButtons?: boolean
+  title: string
+  bgType: EventTypes
+}) => {
+  const coverImage = coverImages[bgType] ?? '/backgrounds/band-bg-ngis.jpg'
   return (
     <motion.div
       className='w-full h-92 overflow-hidden relative'
@@ -14,8 +25,8 @@ const Header = ({ hideButtons }: { hideButtons?: boolean }) => {
     >
       <img
         className='w-full h-full object-cover'
-        src='/backgrounds/band-bg-ngis.jpg'
-        alt=''
+        src={coverImage}
+        alt='header'
       />
 
       {/* gradient overlay */}
@@ -42,10 +53,10 @@ const Header = ({ hideButtons }: { hideButtons?: boolean }) => {
         <h6
           className={`font-oswald text-white text-5xl font-semibold uppercase`}
         >
-          WE CARE ABOUT SOUND OF PERFORMERS
+          {title}
         </h6>
 
-        {!hideButtons && (
+        {!hideButtons ? (
           <div className='flex gap-2'>
             <Link
               href='/full-band-setup/inclusions'
@@ -53,10 +64,21 @@ const Header = ({ hideButtons }: { hideButtons?: boolean }) => {
             >
               View Inclusions
             </Link>
-            <button className='px-4 py-3 text-zinc-950 text-sm font-semibold cursor-pointer bg-white'>
+            <Link
+              href='/full-band-setup/backline'
+              className='px-4 py-3 text-zinc-950 text-sm font-semibold cursor-pointer bg-white'
+            >
               Backline Rental
-            </button>
+            </Link>
           </div>
+        ) : (
+          <Link
+            href='/full-band-setup'
+            className='px-4 py-3 text-xs font-semibold cursor-pointer text-white hover:bg-white hover:text-zinc-950 flex items-center gap-1'
+          >
+            <IoArrowBackOutline />
+            Back to Full Band page
+          </Link>
         )}
       </motion.div>
     </motion.div>

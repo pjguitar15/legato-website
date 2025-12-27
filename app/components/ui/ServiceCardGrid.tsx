@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
+import Link from 'next/link'
 
 interface ServiceCard {
   title: string
@@ -8,6 +9,7 @@ interface ServiceCard {
   imageSrc: string
   icon?: ReactNode
   features?: string[]
+  href: string
 }
 
 const ServiceCard = ({ card }: { card: ServiceCard }) => {
@@ -25,7 +27,7 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
           height={300}
           className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
         />
-        <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
+        <div className='absolute inset-0 bg-linear-to-t from-black/60 to-transparent' />
       </div>
 
       {/* Content */}
@@ -49,9 +51,14 @@ const ServiceCard = ({ card }: { card: ServiceCard }) => {
           </ul>
         )}
 
-        {/* <button className='w-full py-2 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 text-emerald-400 font-semibold hover:from-emerald-400/40 hover:to-cyan-400/40 transition-all duration-300'>
-          Learn More
-        </button> */}
+        <div className='flex'>
+          <Link
+            href={card.href}
+            className='w-full py-2 bg-linear-to-r from-emerald-400/20 to-cyan-400/20 text-emerald-400 font-semibold hover:from-emerald-400/40 hover:to-cyan-400/40 transition duration-300 text-sm cursor-pointer px-4 text-center'
+          >
+            Learn More
+          </Link>
+        </div>
       </div>
     </motion.div>
   )

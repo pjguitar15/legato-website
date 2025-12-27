@@ -8,16 +8,23 @@ import PackageModal from './PackageModal'
 import { usePathname } from 'next/navigation'
 import { formatSlugToTitle } from '@/utils/helpers'
 import PackageCard from './PackageCard'
+import { EventTypes } from '@/constants/eventTypes'
 
-const schoolFullBandPackages = packages.find(
-  (pkg) => pkg.category === 'school-full-band',
-)
-
-const Packages = () => {
+const Packages = ({
+  category,
+  eventType,
+}: {
+  category?: string
+  eventType: EventTypes
+}) => {
   const [selectedPackage, setSelectedPackage] = useState<number | null>(null)
   const pathname = usePathname()
   const currentPath = pathname.split('/').filter(Boolean)[1] || ''
   const packageName = currentPath ? formatSlugToTitle(currentPath) : ''
+
+  const schoolFullBandPackages = packages.find(
+    (pkg) => pkg.category === (category ?? 'school-full-band'),
+  )
 
   const handleClick = (packageId: number) => {
     setSelectedPackage(packageId)
@@ -45,6 +52,7 @@ const Packages = () => {
             features={pkg.features}
             id={pkg.id}
             handleClick={handleClick}
+            eventType={eventType ?? 'full-band'}
           />
         ))}
       </div>

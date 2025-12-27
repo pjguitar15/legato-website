@@ -8,6 +8,7 @@ import { MdGraphicEq, MdLightbulb, MdMusicNote } from 'react-icons/md'
 import TestimonialSection from '../ui/TestimonialSection'
 import PremiumCTASection from '../ui/PremiumCTASection'
 import { useRouter } from 'next/navigation'
+import CompaniesThatBooked from '../sections/CompaniesThatBooked'
 
 const testimonials = [
   {
@@ -43,6 +44,7 @@ const serviceCards = [
       'Stage Lighting',
       'Real-time Mixing',
     ],
+    href: '/sounds-and-lights',
   },
   {
     title: 'Full Band Rental',
@@ -51,6 +53,7 @@ const serviceCards = [
     imageSrc: '/backgrounds/full-band-background.jpg',
     icon: <MdGraphicEq />,
     features: ['Drum Kits', 'Amplifiers', 'Keyboards', 'Wireless Systems'],
+    href: '/full-band-setup/backline',
   },
   {
     title: 'LED Wall',
@@ -59,6 +62,7 @@ const serviceCards = [
     imageSrc: '/backgrounds/led-wall.jpg',
     icon: <MdLightbulb />,
     features: ['LED Walls', 'Moving Lights', 'Stage Wash', 'Effect Lighting'],
+    href: '/led-wall',
   },
 ]
 
@@ -109,6 +113,8 @@ const LandingPage = () => {
         imageAlt='Professional event lighting'
         ctaText='Book Now'
       />
+
+      <CompaniesThatBooked />
 
       {/* Testimonials */}
       <TestimonialSection

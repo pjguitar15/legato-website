@@ -1,5 +1,147 @@
 export const packages = [
   {
+    category: 'default-packages',
+    packages: [
+      {
+        id: 1,
+        name: 'Basic Sounds and Lights Package',
+        description:
+          'Essential audio setup for church events and intimate gatherings.',
+        price: '7,000',
+        features: [
+          'Clear, warm sound for vocals',
+          'Church-appropriate lighting',
+          'Professional audio mixing',
+          'Respectful minimal setup',
+          'Experienced church technician',
+        ],
+        equipment: [
+          'Audio System: 2× Powered speakers (RCF ART 745A MK4)',
+          'Audio System: 1× Digital mixer (Allen & Heath SQ5)',
+          'Microphone: 2× Wireless microphones (MIPRO 311B)',
+          'Microphone: 1× Wired microphone (Sennheiser E935)',
+          'Lights: 4× PAR RGB backlights (Kosmo/Aerolites)',
+          'Lights: 1× DMX 512 Controller',
+          'Lights: 4× Amber front lights (Kosmo/Aerolites)',
+          'Lights: 2× T-bar stands (holds PAR lights)',
+          'Others: 2× Speaker stands, cables, extensions',
+          'Crew & Transport: 2× Tech crew, transport service',
+        ],
+        sampleImages: [
+          '/event-types/church-anniversary/church-anniversary-1.jpg',
+        ],
+      },
+      {
+        id: 2,
+        name: 'Sounds and Lights with Full Band Setup Package',
+        description:
+          'Complete full-band setup for school events with all drums, amplifiers, and professional audio support.',
+        price: '25,000',
+        features: [
+          'Full band audio and amplification',
+          'Complete drum miking setup',
+          'Dynamic stage lighting',
+          'Professional mixing and monitoring',
+          'Expert crew for band performances',
+        ],
+        equipment: [
+          'Audio System: 2× Powered speakers (RCF ART 745A MK4)',
+          'Audio System: 1× Digital mixer (Allen & Heath SQ5)',
+          'Audio System: 2× Subwoofers (QSC KLA181)',
+          'Audio System: 4× Monitor speakers (QSC K12 & Yamaha DXR10)',
+          'Audio System: 1× Digital stage box (Allen & Heath AR2412)',
+          'Microphone: 2× Wireless microphones (MIPRO 311B)',
+          'Microphone: 2× Wired microphones (Sennheiser E935)',
+          'Drums: Drumset (Pearl Export)',
+          'Drums: Cymbals (Sabian HMX & AAX)',
+          'Drums: Kick pedal (Iron Cobra 600)',
+          'Drums: Kick mic (Shure Beta 52A)',
+          'Drums: Snare mic (Shure SM57)',
+          'Drums: 2× Tom mics (Shure PGA 56)',
+          'Drums: 1× Overhead mic (Shure PGA 81)',
+          'Amplifiers: 2× Guitar amplifiers (Laney LX120R Twin)',
+          'Amplifiers: Bass amplifier (GK MB115)',
+          'Amplifiers: 2× Guitar mics (Shure SM56)',
+          'Lights: 8× PAR RGB backlights (Kosmo/Aerolites)',
+          'Lights: 1× Light controller (MiniPearl 1024)',
+          'Lights: 4× Amber front lights (4×50W LED PAR)',
+          'Lights: 4× T-bar stands (holds PAR lights)',
+          'Others: 2× Speaker stands (height adjustable)',
+          'Others: XLR cables (enough for event)',
+          'Others: 2× Cable ramps (solid quality)',
+          'Others: Extension cables (high quality)',
+          'Others: 3.5mm AUX cable (play your music)',
+          'Others: 3× Mic stands (with press to adjust)',
+          'Others: 1× Lyric stand (add upon request)',
+          'Others: 1× Fog machine (Titanium Audio)',
+          'Crew & Transport: 5× Tech crew (experts from Legato)',
+          'Crew & Transport: Transport service (Mitsubishi L300)',
+        ],
+        sampleImages: [
+          '/packages-sample-images/school-full-band/school-full-band-1.jpg',
+        ],
+        addOns: [
+          '2× Yamaha monitors (+2,000)',
+          '2× Moving headlights (+2,000)',
+        ],
+      },
+      {
+        id: 3,
+        name: 'Sounds and Lights with Full Band Setup Package',
+        description:
+          'Complete full-band setup for school events with all drums, amplifiers, and professional audio support.',
+        price: '25,000',
+        features: [
+          'Full band audio and amplification',
+          'Complete drum miking setup',
+          'Dynamic stage lighting',
+          'Professional mixing and monitoring',
+          'Expert crew for band performances',
+        ],
+        equipment: [
+          'Audio System: 2× Powered speakers (RCF ART 745A MK4)',
+          'Audio System: 1× Digital mixer (Allen & Heath SQ5)',
+          'Audio System: 2× Subwoofers (QSC KLA181)',
+          'Audio System: 4× Monitor speakers (QSC K12 & Yamaha DXR10)',
+          'Audio System: 1× Digital stage box (Allen & Heath AR2412)',
+          'Microphone: 2× Wireless microphones (MIPRO 311B)',
+          'Microphone: 2× Wired microphones (Sennheiser E935)',
+          'Drums: Drumset (Pearl Export)',
+          'Drums: Cymbals (Sabian HMX & AAX)',
+          'Drums: Kick pedal (Iron Cobra 600)',
+          'Drums: Kick mic (Shure Beta 52A)',
+          'Drums: Snare mic (Shure SM57)',
+          'Drums: 2× Tom mics (Shure PGA 56)',
+          'Drums: 1× Overhead mic (Shure PGA 81)',
+          'Amplifiers: 2× Guitar amplifiers (Laney LX120R Twin)',
+          'Amplifiers: Bass amplifier (GK MB115)',
+          'Amplifiers: 2× Guitar mics (Shure SM56)',
+          'Lights: 8× PAR RGB backlights (Kosmo/Aerolites)',
+          'Lights: 1× Light controller (MiniPearl 1024)',
+          'Lights: 4× Amber front lights (4×50W LED PAR)',
+          'Lights: 4× T-bar stands (holds PAR lights)',
+          'Others: 2× Speaker stands (height adjustable)',
+          'Others: XLR cables (enough for event)',
+          'Others: 2× Cable ramps (solid quality)',
+          'Others: Extension cables (high quality)',
+          'Others: 3.5mm AUX cable (play your music)',
+          'Others: 3× Mic stands (with press to adjust)',
+          'Others: 1× Lyric stand (add upon request)',
+          'Others: 1× Fog machine (Titanium Audio)',
+          'Crew & Transport: 5× Tech crew (experts from Legato)',
+          'Crew & Transport: Transport service (Mitsubishi L300)',
+        ],
+        sampleImages: [
+          '/packages-sample-images/school-full-band/school-full-band-1.jpg',
+        ],
+        addOns: [
+          '2× Yamaha monitors (+2,000)',
+          '2× Moving headlights (+2,000)',
+        ],
+      },
+    ],
+  },
+  {
     category: 'school-full-band',
     packages: [
       {
@@ -48,7 +190,9 @@ export const packages = [
           'Crew & Transport: 5× Tech crew (experts from Legato)',
           'Crew & Transport: Transport service (Mitsubishi L300)',
         ],
-        sampleImages: ['/packages-sample-images/school-full-band/school-full-band-1.jpg'],
+        sampleImages: [
+          '/packages-sample-images/school-full-band/school-full-band-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -102,7 +246,9 @@ export const packages = [
           'Crew & Transport: 5× Tech crew (experts from Legato)',
           'Crew & Transport: Transport service (Mitsubishi L300)',
         ],
-        sampleImages: ['/packages-sample-images/school-full-band/school-full-band-1.jpg'],
+        sampleImages: [
+          '/packages-sample-images/school-full-band/school-full-band-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -116,7 +262,8 @@ export const packages = [
       {
         id: 1,
         name: 'Basic Sounds and Lights Package',
-        description: 'Essential audio setup for church events and intimate gatherings.',
+        description:
+          'Essential audio setup for church events and intimate gatherings.',
         price: '7,000',
         features: [
           'Clear, warm sound for vocals',
@@ -137,12 +284,15 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/church-anniversary/church-anniversary-1.jpg']
+        sampleImages: [
+          '/event-types/church-anniversary/church-anniversary-1.jpg',
+        ],
       },
       {
         id: 2,
         name: 'Sounds and Lights with Subwoofers Package',
-        description: 'Enhanced setup with better sound projection for larger churches.',
+        description:
+          'Enhanced setup with better sound projection for larger churches.',
         price: '10,000',
         features: [
           'Enhanced sound depth and clarity',
@@ -170,7 +320,8 @@ export const packages = [
       {
         id: 3,
         name: 'Sounds and Lights with Sub and Monitors Package',
-        description: 'Premium setup for cathedral performances and special celebrations.',
+        description:
+          'Premium setup for cathedral performances and special celebrations.',
         price: '12,000',
         features: [
           'Professional-grade sound system',
@@ -190,14 +341,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
         name: 'Sounds and Lights with Sub and Monitors Plus Package',
-        description: 'Advanced setup for grand celebrations and major church events.',
+        description:
+          'Advanced setup for grand celebrations and major church events.',
         price: '15,000',
         features: [
           'Concert-level audio quality',
@@ -215,14 +365,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
         name: 'Sounds and Lights with Full Band Setup Package',
-        description: 'Complete band setup for major anniversary celebrations and special events.',
+        description:
+          'Complete band setup for major anniversary celebrations and special events.',
         price: '25,000',
         features: [
           'Full band audio and amplification',
@@ -242,7 +391,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/church-anniversary/church-anniversary-1.jpg'],
+        sampleImages: [
+          '/event-types/church-anniversary/church-anniversary-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -251,7 +402,8 @@ export const packages = [
       {
         id: 6,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium package with moving lights for maximum celebration impact.',
+        description:
+          'Premium package with moving lights for maximum celebration impact.',
         price: '30,000',
         features: [
           'Concert-level audio system',
@@ -273,7 +425,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/church-anniversary/church-anniversary-1.jpg'],
+        sampleImages: [
+          '/event-types/church-anniversary/church-anniversary-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -287,7 +441,8 @@ export const packages = [
       {
         id: 1,
         name: 'Basic Sounds and Lights Package',
-        description: 'Professional audio setup for corporate presentations and meetings.',
+        description:
+          'Professional audio setup for corporate presentations and meetings.',
         price: '7,000',
         features: [
           'Clear presentation audio',
@@ -305,12 +460,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/corporate-events/corporate-events-1.jpg']
+        sampleImages: ['/event-types/corporate-events/corporate-events-1.jpg'],
       },
       {
         id: 2,
         name: 'Sounds and Lights with Subwoofers Package',
-        description: 'Enhanced setup with subwoofers for better audio projection.',
+        description:
+          'Enhanced setup with subwoofers for better audio projection.',
         price: '10,000',
         features: [
           'Improved sound coverage',
@@ -334,7 +490,8 @@ export const packages = [
       {
         id: 3,
         name: 'Sounds and Lights with Sub and Monitors Package',
-        description: 'Premium setup for high-level corporate events and conferences.',
+        description:
+          'Premium setup for high-level corporate events and conferences.',
         price: '12,000',
         features: [
           'Professional-grade audio',
@@ -352,14 +509,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
         name: 'Sounds and Lights with Sub and Monitors Plus Package',
-        description: 'Advanced setup with enhanced lighting for large conferences.',
+        description:
+          'Advanced setup with enhanced lighting for large conferences.',
         price: '15,000',
         features: [
           'High-quality presentation audio',
@@ -377,14 +533,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
         name: 'Sounds and Lights with Full Band Setup Package',
-        description: 'Complete entertainment setup for premium corporate events.',
+        description:
+          'Complete entertainment setup for premium corporate events.',
         price: '25,000',
         features: [
           'Full band audio support',
@@ -448,7 +603,8 @@ export const packages = [
       {
         id: 1,
         name: 'Basic Sounds and Lights Package',
-        description: 'Intimate sound system perfect for cozy venues and close-knit gatherings.',
+        description:
+          'Intimate sound system perfect for cozy venues and close-knit gatherings.',
         price: '7,000',
         features: [
           'Warm intimate sound profile',
@@ -465,7 +621,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/cozy-cove-style/cozy-cove-style-1.jpg']
+        sampleImages: ['/event-types/cozy-cove-style/cozy-cove-style-1.jpg'],
       },
       {
         id: 2,
@@ -510,9 +666,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
@@ -533,9 +687,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
@@ -568,7 +720,8 @@ export const packages = [
       {
         id: 6,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium package with moving lights for upscale performances.',
+        description:
+          'Premium package with moving lights for upscale performances.',
         price: '30,000',
         features: [
           'Concert-level intimate setup',
@@ -602,7 +755,8 @@ export const packages = [
       {
         id: 1,
         name: 'Sounds and Lights with Full Band Setup Package',
-        description: 'Complete professional band setup for restaurant and bar environments.',
+        description:
+          'Complete professional band setup for restaurant and bar environments.',
         price: '25,000',
         features: [
           'Concert-quality band sound',
@@ -621,7 +775,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/restobar-band-setup/restobar-band-setup-1.jpg'],
+        sampleImages: [
+          '/event-types/restobar-band-setup/restobar-band-setup-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -630,7 +786,8 @@ export const packages = [
       {
         id: 2,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium setup with moving lights for premium venue experiences.',
+        description:
+          'Premium setup with moving lights for premium venue experiences.',
         price: '30,000',
         features: [
           'Exceptional band audio quality',
@@ -650,7 +807,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/restobar-band-setup/restobar-band-setup-1.jpg'],
+        sampleImages: [
+          '/event-types/restobar-band-setup/restobar-band-setup-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -664,7 +823,8 @@ export const packages = [
       {
         id: 1,
         name: 'Basic Sounds and Lights Package',
-        description: 'Powerful audio for gymnasium events and sports competitions.',
+        description:
+          'Powerful audio for gymnasium events and sports competitions.',
         price: '7,000',
         features: [
           'Loud clear audio for large spaces',
@@ -680,12 +840,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/gymnasium-events/gymnasium-events-1.jpg']
+        sampleImages: ['/event-types/gymnasium-events/gymnasium-events-1.jpg'],
       },
       {
         id: 2,
         name: 'Sounds and Lights with Subwoofers Package',
-        description: 'Enhanced system with subwoofers for large gymnasium venues.',
+        description:
+          'Enhanced system with subwoofers for large gymnasium venues.',
         price: '10,000',
         features: [
           'Powerful sound with great coverage',
@@ -725,9 +886,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
@@ -748,14 +907,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
         name: 'Sounds and Lights with Full Band Setup Package',
-        description: 'Complete entertainment system for major gymnasium events.',
+        description:
+          'Complete entertainment system for major gymnasium events.',
         price: '25,000',
         features: [
           'Full band audio system',
@@ -783,7 +941,8 @@ export const packages = [
       {
         id: 6,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium system with moving lights for championship events.',
+        description:
+          'Premium system with moving lights for championship events.',
         price: '30,000',
         features: [
           'Concert-level audio',
@@ -817,7 +976,8 @@ export const packages = [
       {
         id: 1,
         name: 'Basic Sounds and Lights Package',
-        description: 'Multi-track recording setup for studio recording sessions.',
+        description:
+          'Multi-track recording setup for studio recording sessions.',
         price: '7,000',
         features: [
           'Professional recording equipment',
@@ -835,7 +995,9 @@ export const packages = [
           'Others: Cables, connectors, extensions',
           'Crew: Sound engineer on-site',
         ],
-        sampleImages: ['/event-types/multi-track-studio-recording/studio-recording-1.jpg']
+        sampleImages: [
+          '/event-types/multi-track-studio-recording/studio-recording-1.jpg',
+        ],
       },
       {
         id: 2,
@@ -892,7 +1054,8 @@ export const packages = [
       {
         id: 4,
         name: 'Sounds and Lights with Sub and Monitors Plus Package',
-        description: 'Premium recording setup for professional album production.',
+        description:
+          'Premium recording setup for professional album production.',
         price: '15,000',
         features: [
           'Professional-grade recording',
@@ -919,7 +1082,8 @@ export const packages = [
       {
         id: 5,
         name: 'Sounds and Lights with Full Band Setup Package',
-        description: 'Complete band recording setup with full production support.',
+        description:
+          'Complete band recording setup with full production support.',
         price: '25,000',
         features: [
           'Full band recording capability',
@@ -939,7 +1103,9 @@ export const packages = [
           'Others: All cables, connectors, extensions',
           'Crew: Sound engineer, mixer, mastering engineer',
         ],
-        sampleImages: ['/event-types/multi-track-studio-recording/studio-recording-1.jpg'],
+        sampleImages: [
+          '/event-types/multi-track-studio-recording/studio-recording-1.jpg',
+        ],
         addOns: [
           '2× Additional microphones (+2,000)',
           'Vocal booth rental (+3,000)',
@@ -948,7 +1114,8 @@ export const packages = [
       {
         id: 6,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium recording with complete production and video support.',
+        description:
+          'Premium recording with complete production and video support.',
         price: '30,000',
         features: [
           'Concert-level recording quality',
@@ -969,7 +1136,9 @@ export const packages = [
           'Others: All professional cables, connectors, extensions',
           'Crew: Sound engineer, mixer, mastering engineer, producer',
         ],
-        sampleImages: ['/event-types/multi-track-studio-recording/studio-recording-1.jpg'],
+        sampleImages: [
+          '/event-types/multi-track-studio-recording/studio-recording-1.jpg',
+        ],
         addOns: [
           '2× Additional microphones (+2,000)',
           'Video recording support (+3,000)',
@@ -1000,7 +1169,7 @@ export const packages = [
           'Setup: Basic equipment setup service',
           'Transport: Transport service',
         ],
-        sampleImages: ['/event-types/backline-rental/backline-rental-1.jpg']
+        sampleImages: ['/event-types/backline-rental/backline-rental-1.jpg'],
       },
       {
         id: 2,
@@ -1111,7 +1280,8 @@ export const packages = [
       {
         id: 6,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium band backline with lighting and complete production.',
+        description:
+          'Premium band backline with lighting and complete production.',
         price: '30,000',
         features: [
           'Concert-level backline',
@@ -1145,7 +1315,8 @@ export const packages = [
       {
         id: 1,
         name: 'Basic Sounds and Lights Package',
-        description: 'Simple yet elegant audio for intimate wedding ceremonies.',
+        description:
+          'Simple yet elegant audio for intimate wedding ceremonies.',
         price: '7,000',
         features: [
           'Clear audio for vows',
@@ -1161,7 +1332,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stand',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/simple-wedding-setup/wedding-setup-1.jpg']
+        sampleImages: ['/event-types/simple-wedding-setup/wedding-setup-1.jpg'],
       },
       {
         id: 2,
@@ -1206,14 +1377,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stand',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
         name: 'Sounds and Lights with Sub and Monitors Plus Package',
-        description: 'Advanced wedding setup with enhanced lighting for special moments.',
+        description:
+          'Advanced wedding setup with enhanced lighting for special moments.',
         price: '15,000',
         features: [
           'Excellent audio quality',
@@ -1229,9 +1399,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stand',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
@@ -1264,7 +1432,8 @@ export const packages = [
       {
         id: 6,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
-        description: 'Premium wedding package with moving lights for unforgettable moments.',
+        description:
+          'Premium wedding package with moving lights for unforgettable moments.',
         price: '30,000',
         features: [
           'Concert-level band audio',
@@ -1314,7 +1483,9 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/simple-corporate-setup/corporate-setup-1.jpg']
+        sampleImages: [
+          '/event-types/simple-corporate-setup/corporate-setup-1.jpg',
+        ],
       },
       {
         id: 2,
@@ -1359,14 +1530,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
         name: 'Sounds and Lights with Sub and Monitors Plus Package',
-        description: 'Advanced corporate setup with enhanced presentation features.',
+        description:
+          'Advanced corporate setup with enhanced presentation features.',
         price: '15,000',
         features: [
           'High-quality presentation audio',
@@ -1382,14 +1552,13 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
         name: 'Sounds and Lights with Full Band Setup Package',
-        description: 'Complete entertainment setup for premium corporate events.',
+        description:
+          'Complete entertainment setup for premium corporate events.',
         price: '25,000',
         features: [
           'Full band audio support',
@@ -1408,7 +1577,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/simple-corporate-setup/corporate-setup-1.jpg'],
+        sampleImages: [
+          '/event-types/simple-corporate-setup/corporate-setup-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -1437,7 +1608,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/simple-corporate-setup/corporate-setup-1.jpg'],
+        sampleImages: [
+          '/event-types/simple-corporate-setup/corporate-setup-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -1467,7 +1640,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/food-park-setup/food-park-setup-1.jpg']
+        sampleImages: ['/event-types/food-park-setup/food-park-setup-1.jpg'],
       },
       {
         id: 2,
@@ -1512,9 +1685,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
@@ -1535,9 +1706,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
@@ -1620,7 +1789,9 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 2× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/barangay-gymnasium-events/barangay-gym-events-1.jpg']
+        sampleImages: [
+          '/event-types/barangay-gymnasium-events/barangay-gym-events-1.jpg',
+        ],
       },
       {
         id: 2,
@@ -1665,9 +1836,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 4,
@@ -1688,9 +1857,7 @@ export const packages = [
           'Others: 2× Speaker stands, cables, extensions, mic stands',
           'Crew & Transport: 3× Tech crew, transport service',
         ],
-        addOns: [
-          '2× Moving headlights (+2,000)',
-        ],
+        addOns: ['2× Moving headlights (+2,000)'],
       },
       {
         id: 5,
@@ -1714,7 +1881,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/barangay-gymnasium-events/barangay-gym-events-1.jpg'],
+        sampleImages: [
+          '/event-types/barangay-gymnasium-events/barangay-gym-events-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',
@@ -1743,7 +1912,9 @@ export const packages = [
           'Others: Speaker stands, cables, extensions, mic stands, fog machine',
           'Crew & Transport: 5× Tech crew, transport service',
         ],
-        sampleImages: ['/event-types/barangay-gymnasium-events/barangay-gym-events-1.jpg'],
+        sampleImages: [
+          '/event-types/barangay-gymnasium-events/barangay-gym-events-1.jpg',
+        ],
         addOns: [
           '2× Yamaha monitors (+2,000)',
           '2× Moving headlights (+2,000)',

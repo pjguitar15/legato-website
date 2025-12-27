@@ -12,15 +12,17 @@ export default function SoundsAndLightsLayout({
   const router = useRouter()
   return (
     <ScrollSection>
-      <div className="w-full">
-        <button
-          className='flex items-center gap-2 cursor-pointer text-xs text-zinc-200 hover:text-white animation duration-200'
-          onClick={() => router.back()}
-        >
-          <IoArrowBack /> Back
-        </button>
+      <div className='bg-zinc-950 lg:px-16'>
+        <div className='w-full mb-2'>
+          <button
+            className='flex items-center gap-2 cursor-pointer text-xs text-zinc-200 hover:text-white animation duration-200'
+            onClick={() => router.back()}
+          >
+            <IoArrowBack /> Back
+          </button>
+        </div>
+        {children}
       </div>
-      {children}
     </ScrollSection>
   )
 }
