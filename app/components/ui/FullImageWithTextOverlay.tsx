@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const FullImageWithTextOverlay = () => {
   return (
@@ -15,7 +16,7 @@ const FullImageWithTextOverlay = () => {
         transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
       />
 
-      {/* Gradient overlay (fade in) */}
+      {/* Gradient overlay */}
       <motion.div
         className='absolute inset-0 h-full bg-linear-to-t from-black via-black/60 to-transparent'
         initial={{ opacity: 0 }}
@@ -35,64 +36,92 @@ const FullImageWithTextOverlay = () => {
         transition={{ duration: 1.0, delay: 0.1, ease: 'easeOut' }}
       />
 
-      {/* Text block (responsive positioning) */}
+      {/* Text + CTA block */}
       <motion.div
         className='absolute
-          left-5 right-5 bottom-6 text-left
-          sm:left-auto sm:right-8 sm:bottom-10 sm:text-right
-          lg:right-10'
+          left-5 right-5 bottom-6
+          sm:left-auto sm:right-8 sm:bottom-10
+          lg:right-12 lg:bottom-14
+          text-left sm:text-right'
         initial='hidden'
         animate='show'
         variants={{
           hidden: {},
-          show: { transition: { staggerChildren: 0.08, delayChildren: 0.25 } },
+          show: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
         }}
       >
-        <motion.h1
-          className='font-oswald text-white tracking-wide leading-tight uppercase
-            text-4xl sm:text-6xl md:text-7xl lg:text-9xl'
-          variants={{
-            hidden: { y: 28, opacity: 0, filter: 'blur(8px)' },
-            show: {
-              y: 0,
-              opacity: 1,
-              filter: 'blur(0px)',
-              transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
-            },
-          }}
-        >
-          LED WALL
-        </motion.h1>
+        <div className='flex flex-col items-start sm:items-end gap-3 sm:gap-4'>
+          <motion.h1
+            className='font-oswald text-white tracking-wide leading-tight uppercase
+              text-4xl sm:text-6xl md:text-7xl lg:text-9xl'
+            variants={{
+              hidden: { y: 28, opacity: 0, filter: 'blur(8px)' },
+              show: {
+                y: 0,
+                opacity: 1,
+                filter: 'blur(0px)',
+                transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+          >
+            LED WALL
+          </motion.h1>
 
-        <motion.p
-          className='font-oswald text-zinc-300 tracking-[0.2em] mt-2 uppercase
-            text-xs sm:text-base md:text-xl lg:text-3xl'
-          variants={{
-            hidden: { y: 18, opacity: 0, filter: 'blur(6px)' },
-            show: {
-              y: 0,
-              opacity: 1,
-              filter: 'blur(0px)',
-              transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-            },
-          }}
-        >
-          Big visuals. Bigger impact.
-        </motion.p>
+          <motion.p
+            className='font-oswald text-zinc-300 tracking-[0.2em] uppercase
+              text-xs sm:text-base md:text-xl lg:text-3xl'
+            variants={{
+              hidden: { y: 18, opacity: 0, filter: 'blur(6px)' },
+              show: {
+                y: 0,
+                opacity: 1,
+                filter: 'blur(0px)',
+                transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+          >
+            Big visuals. Bigger impact.
+          </motion.p>
 
-        {/* Accent line */}
-        <motion.div
-          className='mt-4 h-0.5 w-16 bg-white/70
-            sm:ml-auto sm:w-24'
-          variants={{
-            hidden: { scaleX: 0, opacity: 0, transformOrigin: '100% 50%' },
-            show: {
-              scaleX: 1,
-              opacity: 1,
-              transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-            },
-          }}
-        />
+          {/* Accent line */}
+          <motion.div
+            className='h-0.5 w-14 sm:w-20 bg-white/70'
+            variants={{
+              hidden: { scaleX: 0, opacity: 0, transformOrigin: '100% 50%' },
+              show: {
+                scaleX: 1,
+                opacity: 1,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+          />
+
+          {/* CTA */}
+          <motion.div
+            className='pt-4 sm:pt-6'
+            variants={{
+              hidden: { y: 16, opacity: 0 },
+              show: {
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+          >
+            <Link
+              href='/contact'
+              className='inline-flex items-center justify-center
+                px-6 py-3 lg:px-10 lg:py-4
+                bg-linear-to-r from-emerald-600 to-cyan-600
+                text-white font-semibold tracking-wide
+                hover:scale-105 hover:shadow-lg
+                transition-all duration-300
+                text-sm lg:text-base'
+            >
+              Request a Quote
+            </Link>
+          </motion.div>
+        </div>
       </motion.div>
     </div>
   )

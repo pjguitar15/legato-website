@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
-const VideoBackground = () => {
+const VideoBackground = ({ forHero }: { forHero?: boolean }) => {
   const videoSrc =
     'https://res.cloudinary.com/dbibwzs6c/video/upload/v1766826032/website-video-1_tp03pn.mp4'
 
@@ -14,7 +14,7 @@ const VideoBackground = () => {
 
   return (
     <div className='relative w-full h-[42vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh] overflow-hidden bg-black'>
-      {/* Poster image (instant) */}
+      {/* Poster image */}
       <motion.img
         src={posterSrc}
         alt=''
@@ -41,24 +41,69 @@ const VideoBackground = () => {
       />
 
       {/* Overlays */}
-      <div className='absolute inset-0 bg-black/70' />
-      <div
+      <motion.div
+        className='absolute inset-0 bg-black/70'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      />
+      <motion.div
         className='absolute inset-0 pointer-events-none'
         style={{
           background:
             'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.75) 100%)',
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.0, delay: 0.1, ease: 'easeOut' }}
       />
 
       {/* Text */}
-      <div className='relative z-10 flex flex-col items-center justify-center h-full text-white gap-3 text-center'>
-        <h1 className='font-oswald text-4xl sm:text-6xl lg:text-8xl font-bold uppercase'>
-          About Legato
-        </h1>
-        <h2 className='uppercase tracking-widest text-zinc-300 text-sm sm:text-lg'>
-          Who We Are • What We Do
-        </h2>
-      </div>
+      <motion.div
+        className='relative z-10 flex flex-col items-center justify-center h-full gap-3 text-center'
+        initial='hidden'
+        animate='show'
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.08, delayChildren: 0.35 } },
+        }}
+      >
+        <motion.h1
+          className={`font-oswald font-bold uppercase text-4xl sm:text-6xl lg:text-8xl ${
+            forHero
+              ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent'
+              : 'text-white'
+          }`}
+          variants={{
+            hidden: { y: 26, opacity: 0, filter: 'blur(8px)' },
+            show: {
+              y: 0,
+              opacity: 1,
+              filter: 'blur(0px)',
+              transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+            },
+          }}
+        >
+          {forHero ? 'Legato Sounds and Lights' : 'About Legato'}
+        </motion.h1>
+
+        <motion.h2
+          className='uppercase tracking-widest text-zinc-300 text-sm sm:text-lg'
+          variants={{
+            hidden: { y: 14, opacity: 0, filter: 'blur(6px)' },
+            show: {
+              y: 0,
+              opacity: 1,
+              filter: 'blur(0px)',
+              transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+            },
+          }}
+        >
+          {forHero
+            ? 'Turning Events Into Experiences'
+            : 'Who We Are • What We Do'}
+        </motion.h2>
+      </motion.div>
     </div>
   )
 }

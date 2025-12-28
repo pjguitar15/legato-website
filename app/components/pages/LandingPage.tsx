@@ -8,6 +8,7 @@ import { MdGraphicEq, MdLightbulb, MdMusicNote } from 'react-icons/md'
 import TestimonialSection from '../ui/TestimonialSection'
 import { useRouter } from 'next/navigation'
 import CompaniesThatBooked from '../sections/CompaniesThatBooked'
+import VideoBackground from '../ui/VideoBackground'
 
 const testimonials = [
   {
@@ -73,21 +74,21 @@ const LandingPage = () => {
   }
   return (
     <div className='flex flex-col bg-zinc-950'>
+      <VideoBackground forHero />
+      <div className='w-full bg-black pb-6 pt-5'>
+        <MarqueeLogos />
+      </div>
+
       {/* Hero with Image */}
       <HeroWithImage
-        subtitle='LEGATO SOUNDS AND LIGHTS'
-        title='Professional Sounds and Lights Service'
+        subtitle='HOW WE SATISFY CLIENTS'
+        title='Quality Equipment and Professionalism'
         description='Proudly based in Cavite, we specialize in transforming events through exceptional sound and lighting. Our mission is to provide all kinds of events with the professional quality they need to stand out. Our experienced team and premium equipment ensure an unforgettable experience for clients in Cavite and surrounding areas.'
         imageSrc='/backgrounds/landing-bg.jpg'
         imageAlt='Professional event setup'
         ctaText='Book Now'
         ctaAction={bookNowAction}
       />
-
-      <div className='w-full bg-black pb-6 pt-5'>
-        <MarqueeLogos />
-      </div>
-
       {/* Services */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

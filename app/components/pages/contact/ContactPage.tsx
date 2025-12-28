@@ -1,21 +1,74 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    eventType: '',
+    eventDate: '',
+    message: '',
+  })
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setStatus('idle')
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          event_type: formData.eventType,
+          event_date: formData.eventDate,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      )
+
+      setStatus('success')
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        eventType: '',
+        eventDate: '',
+        message: '',
+      })
+    } catch (err) {
+      console.error('EmailJS Error:', err)
+      setStatus('error')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <main className='bg-zinc-950 pt-12 sm:pt-16 pb-20 sm:pb-24 text-white relative overflow-hidden'>
-      {/* Background image (always behind everything) */}
+      {/* Background image */}
       <div className='absolute inset-0 z-0'>
         <img
           className='w-full h-full object-cover opacity-10'
           src='/backgrounds/contact-bg.jpg'
           alt=''
         />
-        {/* extra dark wash for readability */}
         <div className='absolute inset-0 bg-zinc-950/70' />
-        {/* subtle gradient for depth */}
         <div className='absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/70' />
       </div>
 
@@ -48,7 +101,6 @@ const ContactPage = () => {
                 src='/philson.png'
                 alt='Legato'
               />
-              {/* Bottom fade overlay */}
               <div className='pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-zinc-950 to-transparent' />
             </div>
 
@@ -92,6 +144,7 @@ const ContactPage = () => {
 
             <motion.form
               className='flex flex-col gap-4 sm:gap-5'
+              onSubmit={handleSubmit}
               variants={{
                 hidden: { opacity: 0, y: 12 },
                 show: {
@@ -101,73 +154,83 @@ const ContactPage = () => {
                 },
               }}
             >
-              {/* Name */}
               <input
+                name='name'
                 type='text'
                 placeholder='Name'
-                className='w-full rounded-md bg-zinc-900/80 border border-zinc-700
-                  px-4 py-3 text-white placeholder-zinc-400
-                  focus:outline-none focus:ring-2 focus:ring-emerald-500'
+                value={formData.name}
+                onChange={handleChange}
+                className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
               />
 
-              {/* Email & Phone */}
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                 <input
+                  name='email'
                   type='email'
                   placeholder='Email'
-                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700
-                    px-4 py-3 text-white placeholder-zinc-400
-                    focus:outline-none focus:ring-2 focus:ring-emerald-500'
+                  value={formData.email}
+                  onChange={handleChange}
+                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
                 />
                 <input
+                  name='phone'
                   type='tel'
                   placeholder='Phone Number'
-                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700
-                    px-4 py-3 text-white placeholder-zinc-400
-                    focus:outline-none focus:ring-2 focus:ring-emerald-500'
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
                 />
               </div>
 
-              {/* Event Type & Date */}
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                 <input
+                  name='eventType'
                   type='text'
                   placeholder='Type of Event'
-                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700
-                    px-4 py-3 text-white placeholder-zinc-400
-                    focus:outline-none focus:ring-2 focus:ring-emerald-500'
+                  value={formData.eventType}
+                  onChange={handleChange}
+                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
                 />
                 <input
+                  name='eventDate'
                   type='date'
-                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700
-                    px-4 py-3 text-white placeholder-zinc-400
-                    focus:outline-none focus:ring-2 focus:ring-emerald-500'
+                  value={formData.eventDate}
+                  onChange={handleChange}
+                  className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
                 />
               </div>
 
-              {/* Message */}
               <textarea
+                name='message'
                 placeholder='Other details such as time, venue, and theme'
                 rows={5}
-                className='w-full rounded-md bg-zinc-900/80 border border-zinc-700
-                  px-4 py-3 text-white placeholder-zinc-400 resize-none
-                  focus:outline-none focus:ring-2 focus:ring-emerald-500'
+                value={formData.message}
+                onChange={handleChange}
+                className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500'
               />
 
-              {/* Submit */}
               <div className='pt-2'>
                 <motion.button
                   type='submit'
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  className='w-full sm:w-fit px-6 py-3
-                    bg-linear-to-r from-emerald-600 to-cyan-600
-                    text-white font-semibold rounded-md
-                    transition-transform'
+                  disabled={loading}
+                  className='w-full sm:w-fit px-6 py-3 bg-linear-to-r from-emerald-600 to-cyan-600 text-white font-semibold rounded-md transition-transform disabled:opacity-50'
                 >
-                  Send Inquiry
+                  {loading ? 'Sending...' : 'Send Inquiry'}
                 </motion.button>
               </div>
+
+              {status === 'success' && (
+                <p className='text-emerald-400 mt-2'>
+                  Your message was sent successfully!
+                </p>
+              )}
+              {status === 'error' && (
+                <p className='text-red-500 mt-2'>
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </motion.form>
           </motion.div>
         </motion.div>

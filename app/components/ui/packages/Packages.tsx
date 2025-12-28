@@ -1,13 +1,11 @@
 'use client'
 
-import { FaFire } from 'react-icons/fa'
-import { IoCheckmarkOutline } from 'react-icons/io5'
-import { packages } from '../../../../constants/packages-data'
 import { useState } from 'react'
-import PackageModal from './PackageModal'
 import { usePathname } from 'next/navigation'
-import { formatSlugToTitle } from '@/utils/helpers'
+import { packages } from '../../../../constants/packages-data'
+import PackageModal from './PackageModal'
 import PackageCard from './PackageCard'
+import { formatSlugToTitle } from '@/utils/helpers'
 import { EventTypes } from '@/constants/eventTypes'
 
 const Packages = ({
@@ -31,7 +29,7 @@ const Packages = ({
   }
 
   return (
-    <div>
+    <div className='px-4 sm:px-6 lg:px-0 py-6'>
       {selectedPackage && (
         <PackageModal
           selectedPackage={selectedPackage}
@@ -39,11 +37,17 @@ const Packages = ({
           setSelectedPackage={setSelectedPackage}
         />
       )}
-      <div className='mb-6'>
-        <h2 className='text-zinc-400 mb-1'>Recommended Packages for</h2>
-        <p className='text-2xl font-semibold'>{packageName}</p>
+
+      <div className='mb-6 text-center sm:text-left'>
+        <h2 className='text-zinc-400 text-sm sm:text-base mb-1'>
+          Recommended Packages for
+        </h2>
+        <p className='text-xl sm:text-2xl md:text-3xl font-semibold'>
+          {packageName}
+        </p>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'>
         {schoolFullBandPackages?.packages.map((pkg) => (
           <PackageCard
             key={pkg.id}
