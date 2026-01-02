@@ -7,9 +7,35 @@ import SidebarNav from './components/sections/services/SidebarNav'
 import PremiumCTASection from './components/ui/PremiumCTASection'
 
 export const metadata: Metadata = {
-  title: 'Legato Sounds and Lights',
-  description: 'Professional Sounds and Lights Provider',
+  metadataBase: new URL('https://legatosoundsandlights.com'),
+  title: {
+    default: 'Legato Sounds & Lights | Professional Events & Production',
+    template: '%s | Legato Sounds & Lights',
+  },
+  description:
+    'Legato Sounds & Lights provides professional sound, lighting, and event production services for weddings, corporate events, and celebrations.',
+  openGraph: {
+    title: 'Legato Sounds & Lights',
+    description: 'Professional sound, lighting, and event production services.',
+    url: 'https://legatosoundsandlights.com',
+    siteName: 'Legato Sounds & Lights',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Legato Sounds & Lights',
+      },
+    ],
+    locale: 'en_PH',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
+
 
 const poppins = Poppins({
   subsets: ['latin'],
