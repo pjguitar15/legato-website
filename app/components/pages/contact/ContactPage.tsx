@@ -140,6 +140,37 @@ const ContactPage = () => {
                 Schedule a call with us and tell us about your event. We’ll
                 recommend the best setup based on your venue and programme.
               </p>
+              <div className='mt-5 mb-6 text-sm text-zinc-300 flex items-center justify-start'>
+                <div>
+                  <p>
+                    <span className='font-medium text-white'>Owner:</span>{' '}
+                    Philson Suzuki Josol
+                  </p>
+                  <p>
+                    <span className='font-medium text-white'>Phone:</span>{' '}
+                    <a href='tel:09762737247' className='hover:underline'>
+                      0976 273 7247
+                    </a>
+                  </p>
+                </div>
+                <div className='w-px h-7 bg-white mx-auto' />
+
+                <div>
+                  <p>
+                    <span className='font-medium text-white'>Email:</span>{' '}
+                    <a
+                      href='mailto:legatosoundsandlights@gmail.com'
+                      className='hover:underline'
+                    >
+                      legatosoundsandlights@gmail.com
+                    </a>
+                  </p>
+                  <p>
+                    <span className='font-medium text-white'>Location:</span>{' '}
+                    Trece Martires City, Cavite
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.form

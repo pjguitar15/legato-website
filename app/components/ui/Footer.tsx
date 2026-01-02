@@ -5,9 +5,21 @@ import { BiLogoGmail } from 'react-icons/bi'
 
 const Footer = () => {
   const socials = [
-    { id: 1, icon: <RiFacebookFill /> },
-    { id: 2, icon: <RiYoutubeLine /> },
-    { id: 3, icon: <BiLogoGmail /> },
+    {
+      id: 1,
+      icon: <RiFacebookFill />,
+      href: 'https://www.facebook.com/legatosoundsandlightsrental',
+    },
+    {
+      id: 2,
+      icon: <RiYoutubeLine />,
+      href: 'https://www.youtube.com/@LegatoSoundsandLights',
+    },
+    {
+      id: 3,
+      icon: <BiLogoGmail />,
+      href: 'mailto:legatosoundsandlights@gmail.com',
+    },
   ]
 
   return (
@@ -51,12 +63,15 @@ const Footer = () => {
         <div className='flex flex-col items-center justify-center gap-3'>
           <div className='flex gap-3'>
             {socials.map((icon) => (
-              <div
+              <a
                 key={icon.id}
+                href={icon.href}
+                target='_blank'
+                rel='noopener noreferrer'
                 className='w-11 h-11 flex items-center justify-center rounded-full border border-white/20 text-xl cursor-pointer hover:border-white/40 transition-colors'
               >
                 {icon.icon}
-              </div>
+              </a>
             ))}
           </div>
           <p className='text-sm text-zinc-500'>
