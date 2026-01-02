@@ -64,7 +64,7 @@ const HeroWithImage = ({
                   bg-linear-to-r from-emerald-600 to-cyan-600
                   text-white font-bold
                   hover:scale-105 transition-transform duration-300
-                  text-sm lg:text-base'
+                  text-sm lg:text-base cursor-pointer'
               >
                 {ctaText}
               </button>

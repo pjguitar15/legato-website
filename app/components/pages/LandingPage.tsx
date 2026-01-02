@@ -86,7 +86,7 @@ const LandingPage = () => {
         description='Proudly based in Cavite, we specialize in transforming events through exceptional sound and lighting. Our mission is to provide all kinds of events with the professional quality they need to stand out. Our experienced team and premium equipment ensure an unforgettable experience for clients in Cavite and surrounding areas.'
         imageSrc='/backgrounds/landing-bg.jpg'
         imageAlt='Professional event setup'
-        ctaText='Book Now'
+        ctaText='VIEW OUR PACKAGES'
         ctaAction={bookNowAction}
       />
       {/* Services */}

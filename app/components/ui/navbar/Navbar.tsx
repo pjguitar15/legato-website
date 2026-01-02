@@ -4,15 +4,62 @@ import React, { useEffect, useRef, useState } from 'react'
 import BrandLogo from './BrandLogo'
 import DesktopNavLinks from './DesktopNavLinks'
 
+type SubLink = {
+  href: string
+  label: string
+}
+
 export type NavItem = {
   label: string
   href: string
   current?: boolean
+  sublinks?: SubLink[]
 }
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/', current: true },
-  { label: 'Packages', href: '/sounds-and-lights' },
+  {
+    label: 'Packages',
+    href: '/sounds-and-lights',
+    sublinks: [
+      {
+        href: '/sounds-and-lights/corporate-events',
+        label: 'Corporate Events',
+      },
+      {
+        href: '/sounds-and-lights/simple-wedding-setup',
+        label: 'Simple Wedding Setup',
+      },
+      {
+        href: '/sounds-and-lights/simple-corporate-setup',
+        label: 'Simple Corporate',
+      },
+      {
+        href: '/sounds-and-lights/restobar-band-setup',
+        label: 'Indoor Setup',
+      },
+      {
+        href: '/sounds-and-lights/school-full-band',
+        label: 'Outdoor Setup',
+      },
+      {
+        href: '/sounds-and-lights/church-anniversary',
+        label: 'Church Anniversary',
+      },
+      {
+        href: '/sounds-and-lights/cozy-cove-style',
+        label: 'Cozy Cove Style',
+      },
+      {
+        href: '/sounds-and-lights/gymnasium-events',
+        label: 'Gymnasium Events',
+      },
+      {
+        href: '/sounds-and-lights/barangay-gymnasium-events',
+        label: 'Barangay Gymnasium Events',
+      },
+    ],
+  },
   { label: 'Full Band Rental', href: '/full-band-setup' },
   { label: 'LED Wall', href: '/led-wall' },
   // { label: 'Stage Setup', href: '/stage-setup' },
