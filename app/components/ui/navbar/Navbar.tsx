@@ -12,7 +12,7 @@ export type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/', current: true },
-  { label: 'Sounds and Lights', href: '/sounds-and-lights' },
+  { label: 'Packages', href: '/sounds-and-lights' },
   { label: 'Full Band Rental', href: '/full-band-setup' },
   { label: 'LED Wall', href: '/led-wall' },
   // { label: 'Stage Setup', href: '/stage-setup' },

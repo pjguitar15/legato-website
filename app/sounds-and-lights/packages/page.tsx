@@ -12,7 +12,7 @@ const page = () => {
   return (
     <div>
       <Header hideButtons title='Our Packages' bgType='simple-corporate' />
-      <div className='bg-zinc-950 px-16 py-16'>
+      <div className='bg-zinc-950 px-6 lg:px-16 py-16'>
         <DefaultPackages />
       </div>
     </div>

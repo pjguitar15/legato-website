@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 const services = [
   { id: 0, name: 'Home', slug: '' },
-  { id: 1, name: 'Sounds and Lights', slug: 'sounds-and-lights' },
+  { id: 1, name: 'Packages', slug: 'sounds-and-lights' },
   { id: 2, name: 'Full Band Rental', slug: 'full-band-setup' },
   { id: 3, name: 'LED Wall', slug: 'led-wall' },
   { id: 5, name: 'About Legato', slug: 'about-legato' },

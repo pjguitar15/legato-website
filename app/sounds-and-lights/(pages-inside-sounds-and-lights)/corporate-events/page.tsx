@@ -40,7 +40,7 @@ export default function page() {
           />
         ))}
       </div>
-      <TextImageButtonCTA />
+      {/* <TextImageButtonCTA /> */}
     </main>
   )
 }
