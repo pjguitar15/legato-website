@@ -35,13 +35,7 @@ const InfoPillars = () => {
         >
           <div className='text-4xl text-white'>{item.icon}</div>
           <h6 className='text-lg font-medium uppercase'>{item.title}</h6>
-          <p className='text-sm leading-7'>
-            It all started within the entertainment industry with professional
-            lighting. After we successfully enabled the lighting at Coachella,
-            one of the world’s largest festivals, to be controlled wirelessly
-            without interference, our wireless technology effectively became an
-            industry standard.
-          </p>
+          <p className='text-sm leading-7'>{item.description}</p>
         </div>
       ))}
     </section>

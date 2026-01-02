@@ -72,7 +72,7 @@ const CompaniesThatBooked = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        Companies that trust Legato
+        Companies that have booked Legato
       </motion.h6>
 
       <motion.div
