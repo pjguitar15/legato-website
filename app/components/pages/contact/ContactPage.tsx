@@ -191,6 +191,7 @@ const ContactPage = () => {
               }}
             >
               <input
+                required
                 name='name'
                 type='text'
                 placeholder='Name'
@@ -201,6 +202,7 @@ const ContactPage = () => {
 
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                 <input
+                  required
                   name='email'
                   type='email'
                   placeholder='Email'
@@ -209,6 +211,7 @@ const ContactPage = () => {
                   className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
                 />
                 <input
+                  required
                   name='phone'
                   type='tel'
                   placeholder='Phone Number'
@@ -220,6 +223,7 @@ const ContactPage = () => {
 
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                 <input
+                  required
                   name='eventType'
                   type='text'
                   placeholder='Type of Event'
@@ -228,6 +232,7 @@ const ContactPage = () => {
                   className='w-full rounded-md bg-zinc-900/80 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500'
                 />
                 <input
+                  required
                   name='eventDate'
                   type='date'
                   value={formData.eventDate}
@@ -237,6 +242,7 @@ const ContactPage = () => {
               </div>
 
               <textarea
+                required
                 name='message'
                 placeholder='Other details such as time, venue, and theme'
                 rows={5}

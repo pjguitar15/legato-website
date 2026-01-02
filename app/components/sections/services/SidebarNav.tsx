@@ -7,13 +7,13 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import logo from '@/public/legato-no-icon.png'
+import Link from 'next/link'
 
 const services = [
   { id: 0, name: 'Home', slug: '' },
   { id: 1, name: 'Sounds and Lights', slug: 'sounds-and-lights' },
   { id: 2, name: 'Full Band Rental', slug: 'full-band-setup' },
   { id: 3, name: 'LED Wall', slug: 'led-wall' },
-  // { id: 4, name: 'Stage Setup', slug: 'stage-setup' },
   { id: 5, name: 'About Legato', slug: 'about-legato' },
   { id: 6, name: 'Contact', slug: 'contact' },
 ]
@@ -24,7 +24,6 @@ const backgroundMap: Record<string, string> = {
   'full-band-setup': '/backgrounds/full-band-background.jpg',
   'event-lighting': '/backgrounds/service-lighting-bg.jpg',
   'led-wall': '/backgrounds/led-wall.jpg',
-  // 'stage-setup': '/backgrounds/stage.webp',
   'about-legato': '/backgrounds/service-list-bg.jpg',
   contact: '/backgrounds/service-list-bg.jpg',
 }
@@ -46,7 +45,7 @@ const SidebarNav = () => {
         transition={{ duration: 0.2 }}
         disabled={isOpen}
       >
-        <div className='w-16'>
+        <Link className='w-16' href='/'>
           <Image
             src={logo}
             width={50}
@@ -54,7 +53,7 @@ const SidebarNav = () => {
             className='w-full h-full object-contain'
             alt='legato sounds and lights'
           />
-        </div>
+        </Link>
 
         <GiHamburgerMenu onClick={() => setIsOpen(true)} className='text-xl' />
       </motion.button>
@@ -85,11 +84,14 @@ const SidebarNav = () => {
             <div className='absolute inset-0 bg-black/90 z-10' />
 
             <div className='absolute top-6 left-0 right-0 z-20 w-full flex justify-between px-6'>
-              <img
-                src='/legato-logo.png'
-                alt='Legato Events Logo'
-                className='h-10 w-auto'
-              />
+              <Link href='/'>
+                <img
+                  onClick={() => setIsOpen(false)}
+                  src='/legato-logo.png'
+                  alt='Legato Events Logo'
+                  className='h-10 w-auto'
+                />
+              </Link>
               <button
                 onClick={() => setIsOpen(false)}
                 className='cursor-pointer text-white hover:text-zinc-200 transition-colors'
