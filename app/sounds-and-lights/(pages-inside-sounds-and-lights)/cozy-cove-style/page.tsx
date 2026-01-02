@@ -1,7 +1,13 @@
-import ScrollSection from '@/app/components/layout/ScrollSection'
 import ImageTextSection from '@/app/components/ui/ImageTextSection'
 import Packages from '@/app/components/ui/packages/Packages'
 import TextImageButtonCTA from '@/app/components/ui/TextImageButtonCTA'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sound & Lighting Services for Events | Cozy Cove Style',
+  description:
+    'High-quality sound systems and professional lighting services for weddings, corporate events, and celebrations. Cozy Cove Style.',
+}
 
 const sampleEvents = [
   {

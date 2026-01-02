@@ -1,5 +1,11 @@
-import React from 'react'
 import SoundsServiceContents from '../components/sections/services/SoundsServiceContents'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sound & Lighting Services for Events',
+  description:
+    'High-quality sound systems and professional lighting services for weddings, corporate events, and celebrations.',
+}
 
 export default function page() {
   return (

@@ -1,7 +1,13 @@
-import ScrollSection from '@/app/components/layout/ScrollSection'
 import ImageTextSection from '@/app/components/ui/ImageTextSection'
 import Packages from '@/app/components/ui/packages/Packages'
 import TextImageButtonCTA from '@/app/components/ui/TextImageButtonCTA'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sound & Lighting Services for Events | Food Park Setup',
+  description:
+    'High-quality sound systems and professional lighting services for weddings, corporate events, and celebrations. Food Park Setup.',
+}
 
 const sampleEvents = [
   {
@@ -14,7 +20,7 @@ const sampleEvents = [
     title: 'Summer Food Festival with Live Band',
     imgUrl: '/event-types/food-park-setup/food-park-setup-2.jpg',
     description:
-      'A large-scale food park festival combining gourmet vendor stalls with professional entertainment. Our high-power outdoor system delivered the band\'s energy to the entire venue while maintaining pleasant ambient levels in dining areas. The colorful dynamic lighting complemented the festival atmosphere, encouraging mingling and extended stay for food park visitors.',
+      "A large-scale food park festival combining gourmet vendor stalls with professional entertainment. Our high-power outdoor system delivered the band's energy to the entire venue while maintaining pleasant ambient levels in dining areas. The colorful dynamic lighting complemented the festival atmosphere, encouraging mingling and extended stay for food park visitors.",
   },
 ]
 

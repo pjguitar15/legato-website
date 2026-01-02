@@ -1,8 +1,14 @@
 import DefaultPackages from '@/app/components/pages/DefaultPackages'
 import Header from '@/app/components/pages/full-band-page/Header'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sound & Lighting Services for Events | Packages',
+  description:
+    'High-quality sound systems and professional lighting services for weddings, corporate events, and celebrations. Packages.',
+}
 
 const page = () => {
-  
   return (
     <div>
       <Header hideButtons title='Our Packages' bgType='simple-corporate' />

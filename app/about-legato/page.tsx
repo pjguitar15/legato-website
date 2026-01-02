@@ -1,7 +1,12 @@
-import React from 'react'
 import VideoBackground from '../components/ui/VideoBackground'
 import TextWindowImage from '../components/ui/TextWindowImage'
-import HeroWithImage from '../components/ui/HeroWithImage'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sound & Lighting Services for Events | About Legato',
+  description:
+    'About Legato Sounds and Lights. High-quality musical instruments, sound systems and professional lighting services for weddings, corporate events, and celebrations. ',
+}
 
 export default function page() {
   const images = [
