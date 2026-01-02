@@ -440,79 +440,6 @@ export const packages = [
     packages: [
       {
         id: 1,
-        name: 'Basic Sounds and Lights Package',
-        description:
-          'Professional audio setup for corporate presentations and meetings.',
-        price: '7,000',
-        features: [
-          'Clear presentation audio',
-          'Professional stage setup',
-          'Discrete lighting design',
-          'Corporate-appropriate aesthetics',
-          'Experienced technician',
-        ],
-        equipment: [
-          'Audio System: 2× Powered speakers (RCF ART 745A MK4)',
-          'Audio System: 1× Digital mixer (Allen & Heath SQ5)',
-          'Microphone: 2× Wireless microphones, 1× Wired microphone',
-          'Lights: 4× PAR RGB backlights, 4× Amber front lights',
-          'Lights: 1× DMX Controller, 2× T-bar stands',
-          'Others: 2× Speaker stands, cables, extensions, mic stands',
-          'Crew & Transport: 2× Tech crew, transport service',
-        ],
-        sampleImages: ['/event-types/corporate-events/corporate-events-1.jpg'],
-      },
-      {
-        id: 2,
-        name: 'Sounds and Lights with Subwoofers Package',
-        description:
-          'Enhanced setup with subwoofers for better audio projection.',
-        price: '10,000',
-        features: [
-          'Improved sound coverage',
-          'Professional audio quality',
-          'Better venue coverage',
-          'Corporate image enhancement',
-          'Experienced crew',
-        ],
-        equipment: [
-          'Audio System: 2× Powered speakers, 1× Mixer, 2× Subwoofers',
-          'Microphone: 2× Wireless, 1× Wired microphones',
-          'Lights: 4× PAR backlights, 4× Amber front lights, 1× DMX Controller',
-          'Others: 2× Speaker stands, cables, extensions, mic stands',
-          'Crew & Transport: 3× Tech crew, transport service',
-        ],
-        addOns: [
-          '2× Monitor speakers (+2,000)',
-          '2× Moving headlights (+2,000)',
-        ],
-      },
-      {
-        id: 3,
-        name: 'Sounds and Lights with Sub and Monitors Package',
-        description:
-          'Premium setup for high-level corporate events and conferences.',
-        price: '12,000',
-        features: [
-          'Professional-grade audio',
-          'Enhanced stage presentation',
-          'Multiple speaker support',
-          'Professional lighting',
-          'Expert technical team',
-        ],
-        equipment: [
-          'Audio System: 2× Powered speakers, 2× Subwoofers, 2× Monitors',
-          'Audio System: 1× Digital mixer (Allen & Heath SQ5)',
-          'Microphone: 2× Wireless, 1× Wired microphones',
-          'Lights: 4× PAR backlights, 4× Amber front lights',
-          'Lights: 1× DMX Controller, 2× T-bar stands',
-          'Others: 2× Speaker stands, cables, extensions, mic stands',
-          'Crew & Transport: 3× Tech crew, transport service',
-        ],
-        addOns: ['2× Moving headlights (+2,000)'],
-      },
-      {
-        id: 4,
         name: 'Sounds and Lights with Sub and Monitors Plus Package',
         description:
           'Advanced setup with enhanced lighting for large conferences.',
@@ -536,7 +463,35 @@ export const packages = [
         addOns: ['2× Moving headlights (+2,000)'],
       },
       {
-        id: 5,
+        id: 2,
+        name: 'Sounds and Lights with Full Band and Moving Lights Package',
+        description: 'Premium package with moving lights for maximum impact.',
+        price: '20,000',
+        features: [
+          'Full Sounds and Lights Setup',
+          'Loud bass',
+          'Dynamic moving lights',
+          'Large venue capability',
+          'Premium technical team',
+        ],
+        equipment: [
+          'Audio System: 2× Powered speakers, 2× Subwoofers, 4× Monitors',
+          'Audio System: 1× Digital mixer, 1× Digital stage box',
+          'Microphone: 2× Wireless, 2× Wired microphones',
+          'Lights: 8× PAR backlights, 4× Amber front lights',
+          'Lights: 2× Moving headlights, 2× Moving wash',
+          'Lights: 1× Light controller, 4× T-bar stands',
+          'Others: Speaker stands, cables, extensions, mic stands, fog machine',
+          'Crew & Transport: 5× Tech crew, transport service',
+        ],
+        sampleImages: ['/event-types/corporate-events/corporate-events-1.jpg'],
+        addOns: [
+          '2× Yamaha monitors (+2,000)',
+          '2× Moving headlights (+2,000)',
+        ],
+      },
+      {
+        id: 3,
         name: 'Sounds and Lights with Full Band Setup Package',
         description:
           'Complete entertainment setup for premium corporate events.',
@@ -566,7 +521,7 @@ export const packages = [
         ],
       },
       {
-        id: 6,
+        id: 4,
         name: 'Sounds and Lights with Full Band and Moving Lights Package',
         description: 'Premium package with moving lights for maximum impact.',
         price: '30,000',

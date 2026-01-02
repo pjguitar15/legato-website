@@ -8,7 +8,7 @@ import PackageCard from '../ui/packages/PackageCard'
 const DefaultPackages = () => {
   const [selectedPackage, setSelectedPackage] = useState<number | null>(null)
   const schoolFullBandPackages = packages.find(
-    (pkg) => pkg.category === 'default-packages',
+    (pkg) => pkg.category === 'corporate-events',
   )
 
   const handleClick = (packageId: number) => {

@@ -21,7 +21,7 @@ const sampleEvents = [
 export default function page() {
   return (
     <main className='flex flex-col gap-7'>
-      <Packages category='simple-wedding-setup' eventType='wedding' />
+      <Packages category='corporate-events' eventType='wedding' />
       <h1>Here are the sample events</h1>
       <div className='flex flex-col gap-3'>
         {sampleEvents.map((event, index) => (
