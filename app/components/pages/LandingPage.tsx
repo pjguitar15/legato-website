@@ -12,22 +12,22 @@ import VideoBackground from '../ui/VideoBackground'
 
 const testimonials = [
   {
-    name: 'Maria Santos',
-    role: 'Wedding Couple',
+    name: 'Karl Darren De Sosa',
+    role: 'Client',
     message:
-      'Legato made our wedding day perfect. The sound was crystal clear and the lighting created the most magical atmosphere. Highly recommended!',
+      'Highly recommended ang Legato, madaling kausap at high quality ang binibigay nilang Sound plus magaganda rin ang Gamit. God Bless Legato more client pa',
   },
   {
-    name: 'Juan Dela Cruz',
-    role: 'Event Organizer',
+    name: 'Jesus Is Lord Belleview',
+    role: 'Church',
     message:
-      'Professional team, top-quality equipment, and excellent customer service. They handled our corporate event flawlessly.',
+      'HIGHLY RECOMMENDED! 💯 Sobrang approachable and sobrang Professional! 🔥  God Bless Legato Team! 🙏',
   },
   {
-    name: 'Angela Reyes',
-    role: 'School Principal',
+    name: 'John Wils',
+    role: 'Client',
     message:
-      "Our school assembly sounded amazing! Legato's team was responsive, efficient, and made everything seamless.",
+      'Very Professional, Good quality audio at affordable price very responsive din! 💯 recommended!',
   },
 ]
 
