@@ -140,7 +140,8 @@ const ContactPage = () => {
                 Schedule a call with us and tell us about your event. We’ll
                 recommend the best setup based on your venue and programme.
               </p>
-              <div className='mt-5 mb-6 text-sm text-zinc-300 flex items-center justify-start'>
+              <div className='mt-5 mb-6 text-sm text-zinc-300 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6'>
+                {/* Left */}
                 <div>
                   <p>
                     <span className='font-medium text-white'>Owner:</span>{' '}
@@ -153,8 +154,12 @@ const ContactPage = () => {
                     </a>
                   </p>
                 </div>
-                <div className='w-px h-7 bg-white mx-auto' />
 
+                {/* Divider */}
+                <div className='hidden sm:block w-px h-7 bg-white/40' />
+                <div className='block sm:hidden h-px w-full bg-white/20' />
+
+                {/* Right */}
                 <div>
                   <p>
                     <span className='font-medium text-white'>Email:</span>{' '}
